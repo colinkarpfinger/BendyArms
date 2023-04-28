@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{166cb4b8-e71a-4eae-b850-42c547f16fc2}">
+		<property name="assetPath">
+			<value>Sfx/UI/UI_Click_Tap_Noisy_mono.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.068049886621315198</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e09655bd-09c0-455f-b5c7-e98a057a4aa0}</destination>
+		</relationship>
+	</object>
+</objects>

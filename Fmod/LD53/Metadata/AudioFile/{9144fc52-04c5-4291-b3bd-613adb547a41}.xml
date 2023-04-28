@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9144fc52-04c5-4291-b3bd-613adb547a41}">
+		<property name="assetPath">
+			<value>Sfx/UI/UI_Click_Tap_Hybrid_Smooth_mono.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.020045351473922904</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e09655bd-09c0-455f-b5c7-e98a057a4aa0}</destination>
+		</relationship>
+	</object>
+</objects>

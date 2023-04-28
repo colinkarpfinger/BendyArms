@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{66faa6df-7127-4ec6-aa91-b5bb48a03133}">
+		<property name="assetPath">
+			<value>Sfx/UI/UI_Click_Tap_Subtle_mono.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.017278911564625851</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e09655bd-09c0-455f-b5c7-e98a057a4aa0}</destination>
+		</relationship>
+	</object>
+</objects>
