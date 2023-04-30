@@ -7,7 +7,7 @@ Shader "Unlit/water2"
         _LightFoamTex ("Texture1", 2D) = "white" {}
         _DarkFoamTex ("Texture2", 2D) = "white" {}
         _BottomTex ("Texture3", 2D) = "white" {}
-        _UTime ("_UTime", Float) = 0.0
+        _PreWaterTex ("PreWaterTex", 2D) = "white" {}
     }
     SubShader
     {
@@ -34,13 +34,14 @@ Shader "Unlit/water2"
             {
                 float4 vertex : SV_POSITION;
                 float2 timeTex: TEXCOORD0;
+                float4 screenPos: TEXCOORD3;
                 float4 worldVertex: TEXCOORD1;
             };
 
             sampler2D _LightFoamTex;
             sampler2D _DarkFoamTex;
             sampler2D _BottomTex;
-            float _UTime;
+            sampler2D _PreWaterTex;
 
             float hash1( float n )
             {
@@ -105,6 +106,7 @@ Shader "Unlit/water2"
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.worldVertex = mul(unity_ObjectToWorld, v.vertex);
+                o.screenPos = ComputeScreenPos(o.vertex);
                 o.timeTex = v.timeTex;
                 return o;
             }
@@ -113,13 +115,7 @@ Shader "Unlit/water2"
             {
                 float2 preFract = float2(i.worldVertex.x, i.worldVertex.z) / 60.0;
                 // sample the texture
-                // apply fog
-                //UNITY_APPLY_FOG(i.fogCoord, col);
-                /*float l = dot(i.subNormal, float3(1, 1, 1));
-                float lowerMod = clamp(((i.worldVertex.y + 1.0) / 1.0), 0.0, 1.0) * 0.5 + 0.5;*/
-                //float unityTime = 0.0;
                 float3 noiseCoord = float3(i.worldVertex.x + i.timeTex.x / 2.0, i.worldVertex.z + i.timeTex.x / 2.0, 0.0);
-                //float3 noiseCoord = float3(i.worldVertex.x, i.worldVertex.z, 1.0);
 
                 
                 float noiseAmountX = noise(noiseCoord);
@@ -132,8 +128,15 @@ Shader "Unlit/water2"
                 float2 noiseD2 = float2(noiseAmount2X, noiseAmount2Y);
                 float4 col = tex2D(_LightFoamTex, frac(preFract + noiseD * 0.005));
                 col += col * col.a + (1.0 - col.a) * tex2D(_DarkFoamTex, frac(preFract + noiseD2 * 0.005));
-                col =  col * col.a + (1.0 - col.a) * tex2D(_BottomTex, frac(preFract));
+                float4 baseTextureHit = tex2D(_PreWaterTex, i.screenPos.xy / i.screenPos.w);
+                float darken = 1.0;
+                if (baseTextureHit.a > 0.05) {
+                    darken = 0.5;
+                }
+                col =  col * col.a + (1.0 - col.a) * tex2D(_BottomTex, frac(preFract)) * darken;
                 return col;
+                //return baseTextureHit;
+                //return float4(i.screenPos.xy / i.screenPos.w, 0.0, 1.0);
             }
             ENDCG
         }
