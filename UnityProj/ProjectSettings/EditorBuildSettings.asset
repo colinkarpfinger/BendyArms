@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BugReproScenePeter.unity
-    guid: 4cc45e7d48c9a48d1bb57758db1f1e0d
+    path: Assets/Scenes/MergeTest.unity
+    guid: f550349ed35b14b8184d6dbea4ec8c3a
   m_configObjects: {}

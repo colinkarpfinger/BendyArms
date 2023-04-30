@@ -22,12 +22,12 @@ namespace BendyArms
         [SerializeField] private Transform cubeVert11;
         [SerializeField] private Transform cubeVert01;
 
-        private Transform[] buoyancyVerts;
+        //private Transform[] buoyancyVerts;
 
         void Start()
         {
             //rigidbody.useGravity = false;
-            buoyancyVerts = new Transform[]{cubeVert00, cubeVert01, cubeVert11, cubeVert10};
+            //buoyancyVerts = new Transform[]{cubeVert00, cubeVert01, cubeVert11, cubeVert10};
         }
 
         // Update is called once per frame
@@ -46,10 +46,10 @@ namespace BendyArms
             var rotationalForce = rigidbody.transform.right * _move.x * 50;
             rigidbody.AddForceAtPosition(rotationalForce, motorTransform.position);
 
-            foreach (Transform vert in this.buoyancyVerts) {
+            /*foreach (Transform vert in this.buoyancyVerts) {
                 float waterDiff = Mathf.Max(Water.ComputeWaterHeight(vert.position.x, vert.position.z, Water.WaterTime) - vert.position.y, 0.0f);
                 rigidbody.AddForceAtPosition(Vector3.up * waterDiff * 50, vert.position);
-            }
+            }*/
         }
 
         void SetInputs()

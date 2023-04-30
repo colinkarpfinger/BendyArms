@@ -19,6 +19,6 @@ public class FollowPlayer : MonoBehaviour
     {
         Debug.Log("following");
         Debug.Log(followTransform.position);
-        transform.position = followTransform.position + offset;
+        transform.position = new Vector3(followTransform.position.x, 0.0f, followTransform.position.z) + offset;
     }
 }

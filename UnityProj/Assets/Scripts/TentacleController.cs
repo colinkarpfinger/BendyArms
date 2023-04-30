@@ -68,6 +68,7 @@ public class TentacleController : MonoBehaviour
                 carriedObjectRb = hit.rigidbody;
                 hit.rigidbody.isKinematic = true;
                 
+                // Colin I'm taking the jump to behavior
                 if (currentSide == TentacleSide.Left)
                 {
                     var offset = hit.point - hit.transform.position;
@@ -80,7 +81,12 @@ public class TentacleController : MonoBehaviour
                 }
                 else
                 {
+                    //hit.transform.parent = tentacleRightFinalLimb.parent;
+                    var offset = hit.point - hit.transform.position;
+                    Debug.Log("offset; "+offset.ToString());
                     hit.transform.parent = tentacleRightFinalLimb.parent;
+                    hit.transform.localPosition = Vector3.zero;
+                    hit.transform.localRotation = Quaternion.identity;
                 }
                 
                 
