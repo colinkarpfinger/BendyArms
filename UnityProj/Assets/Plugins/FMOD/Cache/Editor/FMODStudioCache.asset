@@ -25,7 +25,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 55
   Length: 116000
 --- !u!114 &-4764680486170181008
 MonoBehaviour:
@@ -54,6 +54,58 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 116000
+--- !u!114 &-3819927547814648807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Gameplay/BGM_transitions
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Gameplay/BGM_transitions
+  Guid:
+    Data1: 437184245
+    Data2: 1190678106
+    Data3: -209610351
+    Data4: 1588074524
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7155218194178046413}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 262564
+--- !u!114 &-1965788984521596154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM_layered/Containers
+  m_EditorClassIdentifier: 
+  Name: Containers
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 153101441
+    data2: 273599619
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,13 +124,43 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -4764680486170181008}
   - {fileID: -8044531542423596269}
+  - {fileID: 906400331266703662}
+  - {fileID: -3819927547814648807}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638184535545181993
+  cacheTime: 638184595522385235
   cacheVersion: 131603
+--- !u!114 &906400331266703662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Gameplay/BGM_layered
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Gameplay/BGM_layered
+  Guid:
+    Data1: 2034993847
+    Data2: 1221222715
+    Data3: 1391719814
+    Data4: 1123798479
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1965788984521596154}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 80908
 --- !u!114 &1694878729652328426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,10 +176,34 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638184535545181993
+  lastModified: 638184595522385235
   FileSizes:
   - Name: Desktop
-    Value: 814
+    Value: 990
+  Exists: 1
+--- !u!114 &7155218194178046413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BGM_transitions/Containers
+  m_EditorClassIdentifier: 
+  Name: Containers
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 0
+  ID:
+    data1: 153101441
+    data2: 273599619
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &8488199493654378861
 MonoBehaviour:
@@ -114,8 +220,8 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638184535545166875
+  lastModified: 638184595522360108
   FileSizes:
   - Name: Desktop
-    Value: 2933088
+    Value: 7202592
   Exists: 1

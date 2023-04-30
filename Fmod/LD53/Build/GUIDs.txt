@@ -2,5 +2,8 @@
 {281cbce5-c2a2-0f16-07f2-43eeb7ade2cd} bank:/Master.strings
 {f7c0224a-d642-421b-b7c6-92c4b611f916} bus:/
 {a575509e-96db-4815-be45-e90f85764c44} bus:/Reverb
+{794b8ab7-613b-48ca-86f5-f352cfcdfb42} event:/Music/Gameplay/BGM_layered
+{1a0ee6f5-4e5a-46f8-9199-81f31c18a85e} event:/Music/Gameplay/BGM_transitions
 {a81c2853-4544-4367-b550-1388248ce55f} event:/Sfx/Ambience/Ocean
 {266ca54b-ba09-4be8-b41d-02c651ecb480} event:/Sfx/Ambience/Ship
+{e484202e-e353-4c24-bba6-8d1c938f3bf1} parameter:/Containers
