@@ -14,7 +14,7 @@ public class Water : MonoBehaviour
     private int width = 150;
     private int height = 150;
 
-    private float scale = 1.0f;
+    private float scale = 1.5f;
 
     public static float WaterTime = 0.0f;
 
