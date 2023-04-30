@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{d9ad2af7-5c29-49a5-849a-1ab9f8e3f56a}">
+		<property name="name">
+			<value>Containers</value>
+		</property>
+		<relationship name="folder">
+			<destination>{99ae7ce1-2463-41cc-b290-3e00ee7d20ce}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{e484202e-e353-4c24-bba6-8d1c938f3bf1}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{e484202e-e353-4c24-bba6-8d1c938f3bf1}">
+		<property name="maximum">
+			<value>100</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>24</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
