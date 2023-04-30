@@ -183,12 +183,13 @@ MonoBehaviour:
   - {fileID: -5945832819517339565}
   - {fileID: -868070364282130015}
   - {fileID: 173336317990084069}
+  - {fileID: 6303032706798099090}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638184712443802843
+  cacheTime: 638184725637103706
   cacheVersion: 131603
 --- !u!114 &173336317990084069
 MonoBehaviour:
@@ -260,11 +261,38 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638184712443802843
+  lastModified: 638184725637103706
   FileSizes:
   - Name: Desktop
-    Value: 1132
+    Value: 1166
   Exists: 1
+--- !u!114 &6303032706798099090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Gameplay/Thud
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Gameplay/Thud
+  Guid:
+    Data1: 1302703053
+    Data2: 1305205797
+    Data3: 1651426465
+    Data4: -1491646313
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 95
+  Length: 500
 --- !u!114 &7155218194178046413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,8 +332,8 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638184712443787787
+  lastModified: 638184725637093692
   FileSizes:
   - Name: Desktop
-    Value: 7299616
+    Value: 7342720
   Exists: 1
