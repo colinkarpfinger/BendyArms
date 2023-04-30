@@ -44,8 +44,8 @@ public class TentacleController : MonoBehaviour
         Left
     }
 
-    public FMOD.Studio.EventInstance pickUpSound;
-    public FMOD.Studio.EventInstance dropSound;
+    [SerializeField] public FMOD.Studio.EventInstance pickUpSound;
+    [SerializeField] public FMOD.Studio.EventInstance dropSound;
 
     private void OnEnable()
     {
@@ -69,14 +69,16 @@ public class TentacleController : MonoBehaviour
             
             if (hit.rigidbody)
             {
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Sfx/Gameplay/Pickup");
                 isHoldingObject = true;
                 carriedObjectRb = hit.rigidbody;
                 hit.rigidbody.isKinematic = true;
-                
+                pickUpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Pickup");
+
                 // Colin I'm taking the jump to behavior
                 if (currentSide == TentacleSide.Left)
                 {
+                    pickUpSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleLeftFinalLimb));
+
                     var offset = hit.point - hit.transform.position;
                     Debug.Log("offset; "+offset.ToString());
                     hit.transform.parent = tentacleLeftFinalLimb.parent;
@@ -88,6 +90,8 @@ public class TentacleController : MonoBehaviour
                 else
                 {
                     //hit.transform.parent = tentacleRightFinalLimb.parent;
+                    pickUpSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleRightFinalLimb));
+                    
                     var offset = hit.point - hit.transform.position;
                     Debug.Log("offset; "+offset.ToString());
                     hit.transform.parent = tentacleRightFinalLimb.parent;
@@ -95,7 +99,8 @@ public class TentacleController : MonoBehaviour
                     hit.transform.localRotation = Quaternion.identity;
                 }
                 
-                
+                pickUpSound.start();
+                pickUpSound.release();
                 
             }
         }
@@ -110,13 +115,23 @@ public class TentacleController : MonoBehaviour
     {
         if (!carriedObjectRb)
             return;
+
+        dropSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Drop");
+        if(currentSide == TentacleSide.Left) {
+            Debug.Log("Setting left");
+            dropSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleLeftFinalLimb));
+        } else {
+            dropSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleRightFinalLimb));
+        }
+        dropSound.start();
+        dropSound.release();
+
         carriedObjectRb.isKinematic = false;
         //carriedObjectRb
         carriedObjectRb.transform.parent = null;
         
         isHoldingObject = false;
         carriedObjectRb = null;
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Sfx/Gameplay/Drop");
     }
 
     // Update is called once per frame

@@ -41,19 +41,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfx/Gameplay/Drop
   Guid:
-    Data1: -1894364465
-    Data2: 1218802069
-    Data3: -809341801
-    Data4: 1850002588
+    Data1: -816589611
+    Data2: 1226284833
+    Data3: -1170294393
+    Data4: -1302435829
   Banks:
   - {fileID: 8488199493654378861}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
-  Length: 484
+  MaxDistance: 95
+  Length: 242
 --- !u!114 &-4764680486170181008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,11 +154,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8488199493654378861}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 95
   Length: 242
 --- !u!114 &11400000
 MonoBehaviour:
@@ -188,7 +188,7 @@ MonoBehaviour:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638184683198025656
+  cacheTime: 638184709582002245
   cacheVersion: 131603
 --- !u!114 &173336317990084069
 MonoBehaviour:
@@ -215,7 +215,7 @@ MonoBehaviour:
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 95
   Length: 2000
 --- !u!114 &906400331266703662
 MonoBehaviour:
@@ -260,7 +260,7 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638184683198025656
+  lastModified: 638184709582002245
   FileSizes:
   - Name: Desktop
     Value: 1132
@@ -304,8 +304,8 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638184683198015408
+  lastModified: 638184709581982016
   FileSizes:
   - Name: Desktop
-    Value: 7313248
+    Value: 7299616
   Exists: 1
