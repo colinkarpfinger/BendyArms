@@ -9,8 +9,8 @@ public class Water : MonoBehaviour
 
     private Vector3[] waterVerts;
 
-    private int width = 20;
-    private int height = 20;
+    private int width = 150;
+    private int height = 150;
 
     private float scale = 1.0f;
 
@@ -57,7 +57,7 @@ public class Water : MonoBehaviour
     void Start()
     {
         // generate mesh
-        //meshFilter.sharedMesh = generateMeshGrid(width, height, scale);
+        meshFilter.sharedMesh = generateMeshGrid(width, height, scale);
     }
 
     public static float ComputeWaterHeight(float x, float z, float time) {
@@ -67,7 +67,7 @@ public class Water : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*WaterTime += Time.deltaTime;
+        WaterTime += Time.deltaTime;
         int index = 0;
         Vector3[] displayVerts = new Vector3[width * height];
         for (int x = 0;x < width;x++)
@@ -80,21 +80,12 @@ public class Water : MonoBehaviour
                         Mathf.Floor(transform.position.y / scale) * scale,
                         Mathf.Floor(transform.position.z / scale) * scale);
                 Vector3 transformedVert = this.waterVerts[currIdx] - transform.position + scaleJumper;
-                
-                Debug.Log("-debuggz-");
-                Debug.Log(this.waterVerts[currIdx]);
-                Debug.Log(transform.position);
-                Debug.Log(scale);
-                Debug.Log(scaleJumper);
-                Debug.Log(transformedVert);
 
                 transformedVert.y = ComputeWaterHeight(this.waterVerts[currIdx].x + scaleJumper.x, this.waterVerts[currIdx].z + scaleJumper.z, WaterTime);
                 displayVerts[currIdx] = transformedVert;
             }
         }
-        Debug.Log("mfilter");
-        Debug.Log(meshFilter.transform.position);
         meshFilter.sharedMesh.vertices = displayVerts;
-        meshFilter.sharedMesh.RecalculateNormals();*/
+        meshFilter.sharedMesh.RecalculateNormals();
     }
 }

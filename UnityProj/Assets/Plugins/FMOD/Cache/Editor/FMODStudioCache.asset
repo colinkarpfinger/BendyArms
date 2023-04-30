@@ -1,6 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2766289672063242734
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 1694878729652328426}
+  - {fileID: 8488199493654378861}
+  EditorEvents: []
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 8488199493654378861}
+  StringsBanks:
+  - {fileID: 1694878729652328426}
+  cacheTime: 638183172576684837
+  cacheVersion: 131603
+--- !u!114 &1694878729652328426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,30 +43,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 712
   Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -2766289672063242734}
-  - {fileID: 9010529814040509954}
-  EditorEvents: []
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: 9010529814040509954}
-  StringsBanks:
-  - {fileID: -2766289672063242734}
-  cacheTime: 638183172576684837
-  cacheVersion: 131603
---- !u!114 &9010529814040509954
+--- !u!114 &8488199493654378861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
