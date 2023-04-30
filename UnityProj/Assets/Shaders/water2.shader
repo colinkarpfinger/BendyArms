@@ -4,7 +4,9 @@ Shader "Unlit/water2"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _LightFoamTex ("Texture", 2D) = "white" {}
+        _DarkFoamTex ("Texture", 2D) = "white" {}
+        _BottomTex ("Texture", 2D) = "white" {}
     }
     SubShader
     {
@@ -27,20 +29,19 @@ Shader "Unlit/water2"
             {
                 float4 vertex : POSITION;
                 float3 worldNormal: NORMAL;
-                float2 uv : TEXCOORD0;
             };
 
             struct v2f
             {
                 UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
-                float2 uv : TEXCOORD0;
                 float3 subNormal: TEXCOORD1;
                 float4 worldVertex: TEXCOORD2;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
+            sampler2D _LightFoamTex;
+            sampler2D _DarkFoamTex;
+            sampler2D _BottomTex;
 
             float hash1( float n )
             {
@@ -106,7 +107,6 @@ Shader "Unlit/water2"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.worldVertex = mul(unity_ObjectToWorld, v.vertex);
                 o.subNormal = v.worldNormal;
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 //UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
@@ -116,10 +116,16 @@ Shader "Unlit/water2"
                 // sample the texture
                 // apply fog
                 //UNITY_APPLY_FOG(i.fogCoord, col);
-                float l = dot(i.subNormal, float3(1, 1, 1));
-                float lowerMod = clamp(((i.worldVertex.y + 1.0) / 1.0), 0.0, 1.0) * 0.5 + 0.5;
-                float2 preFract = float2(i.worldVertex.x, i.worldVertex.z) / 20.0;
-                fixed4 col = tex2D(_MainTex, frac(preFract));
+                /*float l = dot(i.subNormal, float3(1, 1, 1));
+                float lowerMod = clamp(((i.worldVertex.y + 1.0) / 1.0), 0.0, 1.0) * 0.5 + 0.5;*/
+                float2 preFract = float2(i.worldVertex.x, i.worldVertex.z) / 60.0;
+                float3 noiseCoord = float3(i.worldVertex.x + _Time.y / 2.0, i.worldVertex.z + _Time.y / 2.0, 0.0);
+                float noiseAmountX = noise(noiseCoord);
+                float noiseAmountY = noise(noiseCoord + float3(123, 1231, 21));
+                float noiseD = float2(noiseAmountX, noiseAmountY);
+                float4 col = tex2D(_LightFoamTex, frac(preFract + noiseD * 0.005));
+                col += col * col.a + (1.0 - col.a) * tex2D(_DarkFoamTex, frac(preFract + noiseD * 0.005));
+                col =  col * col.a + (1.0 - col.a) * tex2D(_BottomTex, frac(preFract));
                 return col;
             }
             ENDCG
