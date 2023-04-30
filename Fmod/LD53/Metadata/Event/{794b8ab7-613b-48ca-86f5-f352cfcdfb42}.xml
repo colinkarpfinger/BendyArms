@@ -144,7 +144,6 @@
 			<destination>{0f33380b-f23b-48c2-b981-6eaaa5915fa5}</destination>
 			<destination>{5ffd5d0d-62c4-41ce-89fd-75cb93c02e88}</destination>
 			<destination>{5ec85020-a4bd-4293-997b-5b4cd4c89bdd}</destination>
-			<destination>{072046fe-08d3-428b-9b95-e4c1b738d858}</destination>
 			<destination>{e51c31c9-ad83-479e-8d45-3f066f9bc53c}</destination>
 			<destination>{9eb91009-b914-46f9-ae5e-77144896ce40}</destination>
 		</relationship>
@@ -372,7 +371,7 @@
 	</object>
 	<object class="NamedMarker" id="{d49dd159-10f8-4632-9c84-2b1d340c6fe3}">
 		<property name="position">
-			<value>0</value>
+			<value>0.25641025641025639</value>
 		</property>
 		<property name="name">
 			<value>Verse</value>
@@ -400,7 +399,7 @@
 	</object>
 	<object class="NamedMarker" id="{82bd5333-c1cc-478f-8839-93bd6d525f93}">
 		<property name="position">
-			<value>16.410256410256409</value>
+			<value>16.666666666666664</value>
 		</property>
 		<property name="name">
 			<value>Verse</value>
@@ -414,7 +413,7 @@
 	</object>
 	<object class="NamedMarker" id="{6d112cf6-ca1e-4692-a5cf-a13b4e212f5c}">
 		<property name="position">
-			<value>24.615384615384613</value>
+			<value>24.871794871794869</value>
 		</property>
 		<property name="name">
 			<value>Refrain</value>
@@ -428,7 +427,7 @@
 	</object>
 	<object class="NamedMarker" id="{1981265f-efaf-4483-ac38-c3ef36910286}">
 		<property name="position">
-			<value>32.820512820512818</value>
+			<value>33.076923076923073</value>
 		</property>
 		<property name="name">
 			<value>Verse C</value>
@@ -442,7 +441,7 @@
 	</object>
 	<object class="NamedMarker" id="{d89c3420-0d4b-4d39-8248-fe1d5921783f}">
 		<property name="position">
-			<value>41.538461538461533</value>
+			<value>41.794871794871788</value>
 		</property>
 		<property name="name">
 			<value>Refrain</value>
@@ -456,7 +455,7 @@
 	</object>
 	<object class="NamedMarker" id="{2859d31e-7b98-425f-af70-190d8a00bda0}">
 		<property name="position">
-			<value>49.230769230769226</value>
+			<value>49.487179487179482</value>
 		</property>
 		<property name="name">
 			<value>Verse</value>
@@ -470,7 +469,7 @@
 	</object>
 	<object class="NamedMarker" id="{ebaa8291-e7fa-4786-982e-37b2060eec42}">
 		<property name="position">
-			<value>57.435897435897431</value>
+			<value>57.692307692307686</value>
 		</property>
 		<property name="name">
 			<value>Refrain</value>
@@ -512,7 +511,7 @@
 	</object>
 	<object class="NamedMarker" id="{5ffd5d0d-62c4-41ce-89fd-75cb93c02e88}">
 		<property name="position">
-			<value>15.897435897435896</value>
+			<value>16.410256410256409</value>
 		</property>
 		<property name="name">
 			<value>Switch</value>
@@ -526,21 +525,7 @@
 	</object>
 	<object class="NamedMarker" id="{5ec85020-a4bd-4293-997b-5b4cd4c89bdd}">
 		<property name="position">
-			<value>32.297668098579166</value>
-		</property>
-		<property name="name">
-			<value>Switch</value>
-		</property>
-		<relationship name="timeline">
-			<destination>{9263601c-2eb7-4390-a7a6-8aa198b0f83e}</destination>
-		</relationship>
-		<relationship name="markerTrack">
-			<destination>{3db9536a-b3c1-4298-b59b-d952def65ec2}</destination>
-		</relationship>
-	</object>
-	<object class="NamedMarker" id="{072046fe-08d3-428b-9b95-e4c1b738d858}">
-		<property name="position">
-			<value>41.005499899186717</value>
+			<value>32.820512820512818</value>
 		</property>
 		<property name="name">
 			<value>Switch</value>
@@ -554,7 +539,7 @@
 	</object>
 	<object class="NamedMarker" id="{e51c31c9-ad83-479e-8d45-3f066f9bc53c}">
 		<property name="position">
-			<value>48.727539420480213</value>
+			<value>49.230769230769226</value>
 		</property>
 		<property name="name">
 			<value>Switch</value>
@@ -568,7 +553,7 @@
 	</object>
 	<object class="NamedMarker" id="{9eb91009-b914-46f9-ae5e-77144896ce40}">
 		<property name="position">
-			<value>65.128205128205124</value>
+			<value>65.384615384615373</value>
 		</property>
 		<property name="name">
 			<value>Switch</value>
@@ -695,50 +680,59 @@
 	<object class="MixerBusFader" id="{4c11c3e6-122b-4e3c-ad67-98642790140b}" />
 	<object class="AutomationPoint" id="{935399c7-9585-4ab5-a5fb-45d4459ae201}">
 		<property name="position">
-			<value>4.981412639405205</value>
+			<value>5</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{31bdca02-2d93-4562-932c-df252d30a88f}">
 		<property name="position">
-			<value>0.37174721189591081</value>
+			<value>2</value>
 		</property>
 		<property name="value">
 			<value>-80</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.324849814</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{265a2086-ff02-41c6-a97f-cd376b9b30b0}">
 		<property name="position">
-			<value>9.888475836431228</value>
+			<value>10</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{635201c0-64b3-4100-bf3c-072703388dbb}">
 		<property name="position">
-			<value>5.0557620817843869</value>
+			<value>8</value>
 		</property>
 		<property name="value">
 			<value>-80</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.313206851</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{b936a9ea-3f4e-437d-8ec6-6bf9d5ddffa1}">
 		<property name="position">
-			<value>14.869888475836431</value>
+			<value>15</value>
 		</property>
 		<property name="value">
-			<value>3.81469727e-06</value>
+			<value>0</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{297b6468-d28f-4d45-a984-4d77f9875e4f}">
 		<property name="position">
-			<value>10</value>
+			<value>12</value>
 		</property>
 		<property name="value">
 			<value>-80</value>
+		</property>
+		<property name="curveShape">
+			<value>-0.304255188</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{2cb6be25-5f0f-4f73-9237-202bb0fd9a66}">
