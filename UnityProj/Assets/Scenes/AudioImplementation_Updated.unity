@@ -4660,8 +4660,8 @@ MonoBehaviour:
       Data4: -2135626671
     Path: event:/Sfx/Ambience/Ship
   Event: 
-  PlayEvent: 0
-  StopEvent: 0
+  PlayEvent: 1
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -4691,8 +4691,8 @@ MonoBehaviour:
       Data4: 1608879140
     Path: event:/Sfx/Ambience/Ocean
   Event: 
-  PlayEvent: 0
-  StopEvent: 0
+  PlayEvent: 1
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
