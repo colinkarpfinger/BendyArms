@@ -50,6 +50,9 @@ namespace BendyArms
                 float waterDiff = Mathf.Max(Water.ComputeWaterHeight(vert.position.x, vert.position.z, Water.WaterTime) - vert.position.y, 0.0f);
                 rigidbody.AddForceAtPosition(Vector3.up * waterDiff * 50, vert.position);
             }*/
+            float fwdProjection = Vector3.Dot(rigidbody.transform.forward, rigidbody.velocity);
+            WaterRotato.RotatoSpeed = fwdProjection * 0.2f;
+            PropellerRotato.ProperllerRotatoSpeed = fwdProjection * 0.1f;
         }
 
         void SetInputs()

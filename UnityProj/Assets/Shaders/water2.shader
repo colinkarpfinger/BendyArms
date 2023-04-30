@@ -113,7 +113,7 @@ Shader "Unlit/water2"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float2 preFract = float2(i.worldVertex.x, i.worldVertex.z) / 60.0;
+                float2 preFract = float2(i.worldVertex.x, i.worldVertex.z) / 160.0;
                 // sample the texture
                 float3 noiseCoord = float3(i.worldVertex.x + i.timeTex.x / 2.0, i.worldVertex.z + i.timeTex.x / 2.0, 0.0);
 
@@ -133,8 +133,10 @@ Shader "Unlit/water2"
                 if (baseTextureHit.a > 0.05) {
                     darken = 0.5;
                 }
-                col =  col * col.a + (1.0 - col.a) * tex2D(_BottomTex, frac(preFract)) * darken;
-                return col;
+                float4 bkColor = tex2D(_BottomTex, frac(preFract));
+                col = col * col.a + (1.0 - col.a) * bkColor * darken;
+                float4 blendAmt = clamp(noise(noiseCoord / 10.0 + float3(222, 0, 989)) * 4.0, 0.3, 0.7);
+                return col * (1.0 - blendAmt) + bkColor * blendAmt;
                 //return baseTextureHit;
                 //return float4(i.screenPos.xy / i.screenPos.w, 0.0, 1.0);
             }

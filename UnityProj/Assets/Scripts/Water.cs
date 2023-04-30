@@ -11,10 +11,10 @@ public class Water : MonoBehaviour
 
     private Vector3[] waterVerts;
 
-    private int width = 150;
-    private int height = 150;
+    private int width = 110;
+    private int height = 110;
 
-    private float scale = 1.5f;
+    private float scale = 3.5f;
 
     public static float WaterTime = 0.0f;
 
@@ -66,7 +66,8 @@ public class Water : MonoBehaviour
     }
 
     public static float ComputeWaterHeight(float x, float z, float time) {
-       return (Mathf.PerlinNoise(x / 15.0f + time / 5.0f, z / 15.0f + time / 5.0f) - 0.5f) * 3.0f;
+       //return (Mathf.PerlinNoise(x / 15.0f + time / 5.0f, z / 15.0f + time / 5.0f) - 0.5f) * 3.0f;
+       return 0.0f;
     }
 
     // Update is called once per frame
