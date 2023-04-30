@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 88628560}
   - component: {fileID: 88628563}
   - component: {fileID: 88628564}
+  - component: {fileID: 88628565}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -162,7 +163,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 50edd621bd99e4506ad72f2b37730213, type: 2}
+  - {fileID: 2100000, guid: aae886dd0d5d59844b4ec40cc2d96918, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -221,6 +222,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88628558}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &88628565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88628558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0f9452d5ad241ebaf3ccded428b46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waterMaterial: {fileID: 2100000, guid: 50edd621bd99e4506ad72f2b37730213, type: 2}
+  meshFilter: {fileID: 88628564}
 --- !u!4 &154433947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1515092926022949555, guid: 1cd9052e8c6e344c39f81eb956a4e57c,

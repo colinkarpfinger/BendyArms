@@ -5,6 +5,8 @@ public class Water : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    [SerializeField] private Material waterMaterial;
+
     [SerializeField] private MeshFilter meshFilter;
 
     private Vector3[] waterVerts;
@@ -21,11 +23,13 @@ public class Water : MonoBehaviour
         Mesh mesh = new Mesh();
         int[,] arrayValues = new int[width, height];
         Vector3[] vertices = new Vector3[width * height];
+        Vector2[] timeTex = new Vector2[width * height];
         int index = 0;
         for (int x = 0;x < width;x++)
         {
             for (int z = 0;z < height;z++)
             {
+                timeTex[index] = new Vector2(0.0f, 0.0f);
                 vertices[index++] = new Vector3((x - ((float)width/2.0f)) * scale, 0.0f, (z - ((float)height/2.0f)) * scale); // Some scaling might be needed
             }
         }
@@ -47,6 +51,7 @@ public class Water : MonoBehaviour
         }
         mesh.vertices = vertices;
         mesh.triangles = triangles;
+        mesh.SetUVs(0, timeTex);
         mesh.MarkDynamic();
         mesh.MarkModified();
         // oh god a side effect make it stop!!!!
@@ -70,6 +75,7 @@ public class Water : MonoBehaviour
         WaterTime += Time.deltaTime;
         int index = 0;
         Vector3[] displayVerts = new Vector3[width * height];
+        Vector2[] timeTex = new Vector2[width * height];
         for (int x = 0;x < width;x++)
         {
             for (int z = 0;z < height;z++)
@@ -83,9 +89,11 @@ public class Water : MonoBehaviour
 
                 transformedVert.y = ComputeWaterHeight(this.waterVerts[currIdx].x + scaleJumper.x, this.waterVerts[currIdx].z + scaleJumper.z, WaterTime);
                 displayVerts[currIdx] = transformedVert;
+                timeTex[currIdx] = new Vector2(WaterTime, 0.0f);
             }
         }
         meshFilter.sharedMesh.vertices = displayVerts;
+        meshFilter.sharedMesh.SetUVs(0, timeTex);
         meshFilter.sharedMesh.RecalculateNormals();
     }
 }
