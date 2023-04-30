@@ -454,9 +454,10 @@ GameObject:
   - component: {fileID: 88628559}
   - component: {fileID: 88628563}
   - component: {fileID: 88628564}
+  - component: {fileID: 88628565}
   m_Layer: 4
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,6 +555,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88628558}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &88628565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88628558}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!4 &154433947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1515092926022949555, guid: 1cd9052e8c6e344c39f81eb956a4e57c,
@@ -1930,6 +1952,12 @@ Transform:
   m_Father: {fileID: 556432953}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &749724158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4819191368346748564, guid: 1cd9052e8c6e344c39f81eb956a4e57c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5571294083270015732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &802125709
 GameObject:
   m_ObjectHideFlags: 0
@@ -5050,6 +5078,93 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 5571294083270015732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1482413520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749724158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1474549677
+      Data2: 1130841412
+      Data3: -2012000075
+      Data4: 1608879140
+    Path: event:/Sfx/Ambience/Ocean
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1482413521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749724158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 644654411
+      Data2: 1273543177
+      Data3: -972939852
+      Data4: -2135626671
+    Path: event:/Sfx/Ambience/Ship
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 55
+--- !u!114 &1482413522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749724158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561c54c9264101345a09ce41cec17127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  containerCanvas: {fileID: 0}
+--- !u!114 &1482413523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749724158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fca758f0ced48ee4ca3258202a57b70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1505431684
 GameObject:
   m_ObjectHideFlags: 0
@@ -5524,10 +5639,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1619435256}
   - component: {fileID: 1619435255}
-  - component: {fileID: 1619435254}
   - component: {fileID: 1619435253}
   - component: {fileID: 1619435258}
   - component: {fileID: 1619435257}
+  - component: {fileID: 1619435259}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5578,14 +5693,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1619435254
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619435251}
-  m_Enabled: 1
 --- !u!20 &1619435255
 Camera:
   m_ObjectHideFlags: 0
@@ -5680,6 +5787,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followTransform: {fileID: 154433947}
   offset: {x: 25, y: 25, z: 12}
+--- !u!114 &1619435259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619435251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1001 &1629364585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11588,6 +11708,22 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 1690788754}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4819191368346748564, guid: 1cd9052e8c6e344c39f81eb956a4e57c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482413521}
+    - targetCorrespondingSourceObject: {fileID: 4819191368346748564, guid: 1cd9052e8c6e344c39f81eb956a4e57c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482413520}
+    - targetCorrespondingSourceObject: {fileID: 4819191368346748564, guid: 1cd9052e8c6e344c39f81eb956a4e57c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482413523}
+    - targetCorrespondingSourceObject: {fileID: 4819191368346748564, guid: 1cd9052e8c6e344c39f81eb956a4e57c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1482413522}
     - targetCorrespondingSourceObject: {fileID: 8225021239069704110, guid: 1cd9052e8c6e344c39f81eb956a4e57c,
         type: 3}
       insertIndex: -1

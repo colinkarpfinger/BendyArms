@@ -14,7 +14,7 @@ public class Music : MonoBehaviour
     void Start()
     {
         bS = GetComponent<BeatSystem>();
-        containerText = containerCanvas.GetComponent<Text>();
+        //containerText = containerCanvas.GetComponent<Text>();
         instance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Gameplay/BGM_layered");
         instance.start();
         bS.AssignBeatEvent(instance); 
@@ -23,7 +23,7 @@ public class Music : MonoBehaviour
 
     void Update() 
     {
-        containerText.text = "Containers: " + containerCount.ToString();
+        //containerText.text = "Containers: " + containerCount.ToString();
         if (Input.GetKeyDown(KeyCode.Space))
         {
             containerCount += 1;
