@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8044531542423596269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Ambience/Ship
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Ambience/Ship
+  Guid:
+    Data1: 644654411
+    Data2: 1273543177
+    Data3: -972939852
+    Data4: -2135626671
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 116000
+--- !u!114 &-4764680486170181008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Ambience/Ocean
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Ambience/Ocean
+  Guid:
+    Data1: -1474549677
+    Data2: 1130841412
+    Data3: -2012000075
+    Data4: 1608879140
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 116000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,13 +69,15 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 1694878729652328426}
   - {fileID: 8488199493654378861}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: -4764680486170181008}
+  - {fileID: -8044531542423596269}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638183172576684837
+  cacheTime: 638184535545181993
   cacheVersion: 131603
 --- !u!114 &1694878729652328426
 MonoBehaviour:
@@ -38,10 +94,10 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638183172576684837
+  lastModified: 638184535545181993
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 814
   Exists: 1
 --- !u!114 &8488199493654378861
 MonoBehaviour:
@@ -58,8 +114,8 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638183172576684274
+  lastModified: 638184535545166875
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 2933088
   Exists: 1
