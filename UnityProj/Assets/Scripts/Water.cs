@@ -17,7 +17,7 @@ public class Water : MonoBehaviour
     private float scale = 1.5f;
 
     public static float WaterTime = 0.0f;
-
+    private BoxCollider audioCollider;
 
     Mesh generateMeshGrid(int width, int height, float scale) {
         Mesh mesh = new Mesh();
@@ -62,6 +62,8 @@ public class Water : MonoBehaviour
     void Start()
     {
         // generate mesh
+        audioCollider = GetComponent<BoxCollider>();
+        audioCollider.size = new Vector3(width * scale, 1, height * scale);
         meshFilter.sharedMesh = generateMeshGrid(width, height, scale);
     }
 

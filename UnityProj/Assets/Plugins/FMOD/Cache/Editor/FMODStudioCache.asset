@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 55
   Length: 116000
+--- !u!114 &-5945832819517339565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Gameplay/Drop
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Gameplay/Drop
+  Guid:
+    Data1: -1894364465
+    Data2: 1218802069
+    Data3: -809341801
+    Data4: 1850002588
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 484
 --- !u!114 &-4764680486170181008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,6 +133,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-868070364282130015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Gameplay/Pickup
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Gameplay/Pickup
+  Guid:
+    Data1: 640510724
+    Data2: 1200516781
+    Data3: -329922147
+    Data4: -2131926872
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 242
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,13 +180,43 @@ MonoBehaviour:
   - {fileID: -8044531542423596269}
   - {fileID: 906400331266703662}
   - {fileID: -3819927547814648807}
+  - {fileID: -5945832819517339565}
+  - {fileID: -868070364282130015}
+  - {fileID: 173336317990084069}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638184616390688068
+  cacheTime: 638184683198025656
   cacheVersion: 131603
+--- !u!114 &173336317990084069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/Gameplay/Splash
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/Gameplay/Splash
+  Guid:
+    Data1: 1449715255
+    Data2: 1176279201
+    Data3: -756473420
+    Data4: 395959332
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &906400331266703662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,10 +260,10 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638184616390688068
+  lastModified: 638184683198025656
   FileSizes:
   - Name: Desktop
-    Value: 990
+    Value: 1132
   Exists: 1
 --- !u!114 &7155218194178046413
 MonoBehaviour:
@@ -220,8 +304,8 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638184616390678118
+  lastModified: 638184683198015408
   FileSizes:
   - Name: Desktop
-    Value: 7202304
+    Value: 7313248
   Exists: 1

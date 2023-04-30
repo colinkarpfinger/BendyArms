@@ -43,6 +43,10 @@ public class TentacleController : MonoBehaviour
         Right,
         Left
     }
+
+    public FMOD.Studio.EventInstance pickUpSound;
+    public FMOD.Studio.EventInstance dropSound;
+
     private void OnEnable()
     {
         playerInput.firePrimary.down += TryToPickUp;
@@ -62,8 +66,10 @@ public class TentacleController : MonoBehaviour
         Debug.Log("Trying to pick up");
         if (Physics.Raycast(ray, out hit, 9999f, layersToPickUp))
         {
+            
             if (hit.rigidbody)
             {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Sfx/Gameplay/Pickup");
                 isHoldingObject = true;
                 carriedObjectRb = hit.rigidbody;
                 hit.rigidbody.isKinematic = true;
@@ -110,6 +116,7 @@ public class TentacleController : MonoBehaviour
         
         isHoldingObject = false;
         carriedObjectRb = null;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sfx/Gameplay/Drop");
     }
 
     // Update is called once per frame

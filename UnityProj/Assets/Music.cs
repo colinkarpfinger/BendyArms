@@ -31,8 +31,8 @@ public class Music : MonoBehaviour
         if(BeatSystem.marker == "Switch") {
             instance.setParameterByName("Containers", containerCount);
         }
-        Debug.Log(BeatSystem.beat);
-        Debug.Log(BeatSystem.marker);
-        Debug.Log(containerCount);
+        //Debug.Log(BeatSystem.beat);
+        //Debug.Log(BeatSystem.marker);
+        //Debug.Log(containerCount);
     }
 }
