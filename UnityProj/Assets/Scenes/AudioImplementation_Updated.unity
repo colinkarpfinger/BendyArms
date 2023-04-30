@@ -3782,7 +3782,7 @@ MonoBehaviour:
     Path: event:/Sfx/Gameplay/Splash
   Event: 
   PlayEvent: 3
-  StopEvent: 4
+  StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -3813,7 +3813,7 @@ MonoBehaviour:
     Path: event:/Sfx/Gameplay/Thud
   Event: 
   PlayEvent: 7
-  StopEvent: 8
+  StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
