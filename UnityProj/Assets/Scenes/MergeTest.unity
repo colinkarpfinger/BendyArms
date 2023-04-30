@@ -1166,6 +1166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 767930139}
+  - component: {fileID: 767930140}
   m_Layer: 0
   m_Name: Hover Plane
   m_TagString: Untagged
@@ -1189,6 +1190,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &767930140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767930138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38524fbe5b67146919319a61bb9545c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTransform: {fileID: 154433947}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &802125709
 GameObject:
   m_ObjectHideFlags: 0

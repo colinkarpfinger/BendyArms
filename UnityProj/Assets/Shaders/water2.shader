@@ -134,7 +134,7 @@ Shader "Unlit/water2"
                     darken = 0.5;
                 }
                 col =  col * col.a + (1.0 - col.a) * tex2D(_BottomTex, frac(preFract)) * darken;
-                return col;
+                return col * ((i.worldVertex.y + 2.0) / 2.0);
                 //return baseTextureHit;
                 //return float4(i.screenPos.xy / i.screenPos.w, 0.0, 1.0);
             }
