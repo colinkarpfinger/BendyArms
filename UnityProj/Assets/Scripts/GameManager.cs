@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private int startTime = 60;
     [SerializeField] private int timeBonusPerContainer = 5;
+    [SerializeField] private UIGameOver uiGameOver;
     private int containersDelivered = 0;
     private int timer;
 
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     public event TimerChanged timerChanged;
     void Start()
     {
+        uiGameOver.gameObject.SetActive(false);
         containersDelivered = 0;
         timer = startTime;
         StartCoroutine(UpdateTime());
@@ -55,5 +57,6 @@ public class GameManager : MonoBehaviour
     void TimerEnded()
     {
         //show game over screen or something 
+        uiGameOver.gameObject.SetActive(true);
     }
 }
