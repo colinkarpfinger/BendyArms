@@ -2089,6 +2089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1051471825}
+  audioSuccess: {fileID: 609359441}
 --- !u!65 &609359438
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2175,10 +2176,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
+      Data1: 1712946013
+      Data2: 1184911571
+      Data3: -162648682
+      Data4: 1551231853
     Path: event:/Sfx/Gameplay/Success
   Event: 
   PlayEvent: 0
@@ -2189,8 +2190,8 @@ MonoBehaviour:
   AllowNonRigidbodyDoppler: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &611326559
 GameObject:
   m_ObjectHideFlags: 0
