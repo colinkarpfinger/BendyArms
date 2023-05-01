@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour
     public string newGameScene;
     public Animator[] animators;
     public string[] animations;
+    public GameObject musicManager;
 
     public void NewGame()
     {
@@ -25,6 +26,7 @@ public class MainMenuController : MonoBehaviour
     private IEnumerator LoadSceneAfterPause(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        musicManager.GetComponent<MusicManager>().StopMusic();
         SceneManager.LoadScene(newGameScene);
     }
 }
