@@ -15,6 +15,6 @@ public class WaterRotato : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localRotation *= Quaternion.EulerRotation(0, RotatoSpeed, 0);
+        transform.localRotation *= Quaternion.EulerRotation(0, RotatoSpeed * Time.deltaTime, 0);
     }
 }

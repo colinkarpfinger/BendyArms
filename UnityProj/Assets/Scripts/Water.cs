@@ -68,7 +68,8 @@ public class Water : MonoBehaviour
     }
 
     public static float ComputeWaterHeight(float x, float z, float time) {
-       return (Mathf.PerlinNoise(x / 15.0f + time / 5.0f, z / 15.0f + time / 5.0f) - 0.5f) * 2.0f;
+       float size = Mathf.PerlinNoise(x / 200.0f + time / 5.0f, z / 200.0f + time / 5.0f) * 4.0f;
+       return (Mathf.PerlinNoise(x / 15.0f + time / 5.0f, z / 15.0f + time / 5.0f) - 0.5f) * size;
        //return 0.0f;
     }
 

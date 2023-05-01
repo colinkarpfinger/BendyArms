@@ -15,6 +15,6 @@ public class PropellerRotato : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.RotateAroundLocal(Vector3.forward, ProperllerRotatoSpeed);
+        transform.RotateAroundLocal(Vector3.forward, ProperllerRotatoSpeed * Time.deltaTime);
     }
 }
