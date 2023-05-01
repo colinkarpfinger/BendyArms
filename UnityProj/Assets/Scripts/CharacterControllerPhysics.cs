@@ -14,7 +14,8 @@ namespace BendyArms
 
         [SerializeField] private Transform transform;
          [SerializeField] private Transform motorTransform;
-        [SerializeField] private float forcePerFrame = 50f;
+        [SerializeField] private float forceMultForward = 200f;
+        [SerializeField] private float forceMultTurn = 80f;
         private Vector2 _move;
 
         [SerializeField] private Transform cubeVert00;
@@ -46,11 +47,11 @@ namespace BendyArms
 
         private void FixedUpdate()
         {
-            var forwardsForce = rigidbody.transform.forward * _move.y * 200;
+            var forwardsForce = rigidbody.transform.forward * _move.y * forceMultForward;
             forwardsForce.Scale(new Vector3(1, 0, 1));
             rigidbody.AddForceAtPosition(forwardsForce, motorTransform.position);
 
-            var rotationalForce = rigidbody.transform.right * _move.x * 50;
+            var rotationalForce = rigidbody.transform.right * _move.x * forceMultTurn;
             rigidbody.AddForceAtPosition(rotationalForce, motorTransform.position);
 
             /*foreach (Transform vert in this.buoyancyVerts) {

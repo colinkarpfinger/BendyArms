@@ -354,6 +354,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a2b5b18bedb4bbf895ddf9a03484c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minHeight: -0.5
+  maxHeight: 0.1
+  RotatoDivider: 20
+  smoothTime: 0.3
 --- !u!1 &71800671
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,6 +3742,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a2b5b18bedb4bbf895ddf9a03484c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minHeight: -0.5
+  maxHeight: 0.1
+  RotatoDivider: 20
+  smoothTime: 0.3
 --- !u!1 &1400369565
 GameObject:
   m_ObjectHideFlags: 0
@@ -10501,7 +10509,8 @@ MonoBehaviour:
   rigidbody: {fileID: 3215023987523710684}
   transform: {fileID: 6365704544059744327}
   motorTransform: {fileID: 2726993865683120544}
-  forcePerFrame: 50
+  forceMultForward: 900
+  forceMultTurn: 200
   cubeVert00: {fileID: 807941562466766707}
   cubeVert10: {fileID: 5498702746426387112}
   cubeVert11: {fileID: 6335397328241830489}
