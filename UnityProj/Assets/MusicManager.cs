@@ -10,6 +10,8 @@ public class MusicManager : MonoBehaviour
     [SerializeField] EventReference musicRef;
     private FMOD.Studio.EventInstance musicInstance;
 
+    [SerializeField] EventReference buttonRef;
+
     void Awake()
     {
         DontDestroyOnLoad(this);
@@ -26,5 +28,9 @@ public class MusicManager : MonoBehaviour
     public void StopMusic() {
         musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         musicInstance.release();
+    }
+
+    public void PlayButton() {
+        FMODUnity.RuntimeManager.PlayOneShot(buttonRef);
     }
 }

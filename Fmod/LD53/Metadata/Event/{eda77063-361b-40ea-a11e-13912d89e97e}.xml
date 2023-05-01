@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{152b97d2-0982-4da2-8d94-5925b630574a}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{b0019c31-b3d9-4354-81bb-c910465ee455}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{feca0f66-7f7b-4899-90bc-38f4672b3310}">
 		<relationship name="masterBus">
@@ -57,7 +60,7 @@
 	<object class="MarkerTrack" id="{c51056dc-3f9f-47aa-adef-d385413f7636}" />
 	<object class="GroupTrack" id="{1b555f45-ba27-4335-b589-8b049436f812}">
 		<relationship name="modules">
-			<destination>{93aca115-2082-4f0c-9121-237b3b23e3ca}</destination>
+			<destination>{da597adc-3c93-45ad-89f6-96fcd8fb007e}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{068050b0-3c21-4841-9bd1-c9f2446509be}</destination>
@@ -65,7 +68,7 @@
 	</object>
 	<object class="Timeline" id="{152b97d2-0982-4da2-8d94-5925b630574a}">
 		<relationship name="modules">
-			<destination>{93aca115-2082-4f0c-9121-237b3b23e3ca}</destination>
+			<destination>{da597adc-3c93-45ad-89f6-96fcd8fb007e}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{fab7bfea-3508-457e-8b9f-678c848ffa4e}">
@@ -85,15 +88,18 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d6950de4-078f-4acb-bbbe-3251cd55081b}" />
-	<object class="SingleSound" id="{93aca115-2082-4f0c-9121-237b3b23e3ca}">
+	<object class="SingleSound" id="{da597adc-3c93-45ad-89f6-96fcd8fb007e}">
 		<property name="length">
-			<value>0.045668934240362814</value>
+			<value>0.6428571428571429</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{17effb9f-9ec4-438d-9bd9-19ea1f62198f}</destination>
+			<destination>{220d50e2-feea-46ac-9a60-77469af59384}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{068050b0-3c21-4841-9bd1-c9f2446509be}">
+		<property name="volume">
+			<value>10</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
