@@ -15,6 +15,6 @@ public class PropellerRotato : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localRotation *= Quaternion.EulerRotation(0, ProperllerRotatoSpeed, 0);
+        transform.RotateAroundLocal(Vector3.forward, ProperllerRotatoSpeed);
     }
 }
