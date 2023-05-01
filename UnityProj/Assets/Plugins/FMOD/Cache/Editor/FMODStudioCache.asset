@@ -190,7 +190,7 @@ MonoBehaviour:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638184826653348191
+  cacheTime: 638184861799613218
   cacheVersion: 131603
 --- !u!114 &173336317990084069
 MonoBehaviour:
@@ -262,7 +262,7 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638184826653348191
+  lastModified: 638184861799613218
   FileSizes:
   - Name: Desktop
     Value: 1326
@@ -288,11 +288,11 @@ MonoBehaviour:
   Banks:
   - {fileID: 8488199493654378861}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 95
   Length: 3444
 --- !u!114 &6303032706798099090
 MonoBehaviour:
@@ -360,8 +360,8 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638184826653343275
+  lastModified: 638184861799598128
   FileSizes:
   - Name: Desktop
-    Value: 7412512
+    Value: 7412672
   Exists: 1

@@ -59,7 +59,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{dc9e0a15-131a-4bde-894a-4801272ee4d5}">
 		<property name="maximumDistance">
-			<value>95</value>
+			<value>200</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{b19bce74-c6c9-4400-b806-9972cc6d1ce3}" />
@@ -263,7 +263,7 @@
 	<object class="MixerBusFader" id="{17d96012-5727-451c-931a-a368be4e2290}" />
 	<object class="ObjectSpatialiserEffect" id="{5c9ac241-879f-4e71-ad82-3062abb40bee}">
 		<property name="maximumDistance">
-			<value>95</value>
+			<value>200</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{fcf84204-dea1-46ca-9558-9815a2027f0e}">
@@ -347,10 +347,10 @@
 	</object>
 	<object class="AutomationPoint" id="{5f485a96-e227-410e-9c5c-15f841a8189a}">
 		<property name="position">
-			<value>1.03125</value>
+			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-70</value>
 		</property>
 	</object>
 </objects>
