@@ -23,7 +23,8 @@ namespace BendyArms
         [SerializeField] private Transform cubeVert01;
 
         [SerializeField] private FMOD.Studio.EventInstance propellerSound; 
-
+        
+        private Transform motor;
         //private Transform[] buoyancyVerts;
 
         void Start()
@@ -31,6 +32,7 @@ namespace BendyArms
             //rigidbody.useGravity = false;
             //buoyancyVerts = new Transform[]{cubeVert00, cubeVert01, cubeVert11, cubeVert10};
             propellerSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Propeller");
+            motor = transform.Find("Motor");
         }
 
         // Update is called once per frame
@@ -38,6 +40,8 @@ namespace BendyArms
         {
             if (playerInput)
                 SetInputs();
+
+            propellerSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(motor.gameObject));
         }
 
         private void FixedUpdate()
@@ -66,7 +70,6 @@ namespace BendyArms
                     propellerSound.start();
                 }
             } else {
-                Debug.Log("Movement not forward");
                 if(state != FMOD.Studio.PLAYBACK_STATE.STOPPED){
                     Debug.Log("Stop sound!");
                     propellerSound.keyOff();
