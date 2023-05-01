@@ -1,7 +1,10 @@
 {b0019c31-b3d9-4354-81bb-c910465ee455} bank:/Master
 {281cbce5-c2a2-0f16-07f2-43eeb7ade2cd} bank:/Master.strings
 {f7c0224a-d642-421b-b7c6-92c4b611f916} bus:/
+{1dd5d631-f159-47ee-89f2-4a539abb299f} bus:/Ambience
+{2d526007-30ef-4279-bcfc-5a91f788c7db} bus:/Music
 {a575509e-96db-4815-be45-e90f85764c44} bus:/Reverb
+{6c73db8f-bcb0-4096-9951-251d21ae7613} bus:/SFX
 {794b8ab7-613b-48ca-86f5-f352cfcdfb42} event:/Music/Gameplay/BGM_layered
 {1a0ee6f5-4e5a-46f8-9199-81f31c18a85e} event:/Music/Gameplay/BGM_transitions
 {a81c2853-4544-4367-b550-1388248ce55f} event:/Sfx/Ambience/Ocean
