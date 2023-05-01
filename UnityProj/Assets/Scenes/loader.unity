@@ -870,7 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Banks:
   - Master
-  Scene: MergeTest
+  Scene: MainMenu
 --- !u!4 &1730108344
 Transform:
   m_ObjectHideFlags: 0
