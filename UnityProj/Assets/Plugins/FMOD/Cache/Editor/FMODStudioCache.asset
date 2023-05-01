@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 55
   Length: 116000
+--- !u!114 &-6060464249954196482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfx/UI/MenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/Sfx/UI/MenuMusic
+  Guid:
+    Data1: 1744047757
+    Data2: 1191985976
+    Data3: 1192925343
+    Data4: 1874956630
+  Banks:
+  - {fileID: 8488199493654378861}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 62857
 --- !u!114 &-5945832819517339565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,12 +212,13 @@ MonoBehaviour:
   - {fileID: 173336317990084069}
   - {fileID: 6303032706798099090}
   - {fileID: 3014702543574976938}
+  - {fileID: -6060464249954196482}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638184898192340639
+  cacheTime: 638185327570003668
   cacheVersion: 131603
 --- !u!114 &173336317990084069
 MonoBehaviour:
@@ -262,10 +290,10 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638184898192340639
+  lastModified: 638185327570003668
   FileSizes:
   - Name: Desktop
-    Value: 1326
+    Value: 1370
   Exists: 1
 --- !u!114 &3014702543574976938
 MonoBehaviour:
@@ -360,8 +388,8 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638184898192330387
+  lastModified: 638185327569978603
   FileSizes:
   - Name: Desktop
-    Value: 7412800
+    Value: 9526400
   Exists: 1

@@ -55,7 +55,7 @@
 			<destination>{30d118fc-ba78-4ad5-93fa-ed8860e78c5c}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{f7c0224a-d642-421b-b7c6-92c4b611f916}</destination>
+			<destination>{a9cb672b-bc0d-4eff-b4d5-1d9db52c9e43}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{319055e4-2e9c-4b5b-979d-d4ee324fdf71}" />
@@ -97,6 +97,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{b5546c92-4f1d-47f4-975b-cd94972ba464}">
+		<property name="volume">
+			<value>-3.5</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{76b521f4-4a9e-401f-a742-3777cfe7f47c}</destination>
 		</relationship>
@@ -121,7 +124,7 @@
 			<value>true</value>
 		</property>
 		<property name="length">
-			<value>70.857142857142861</value>
+			<value>58.857142857142861</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -131,6 +134,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{2ad63257-464a-446e-9bb8-6bb415695b56}">
+		<property name="volume">
+			<value>-5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -149,7 +155,7 @@
 			<value>true</value>
 		</property>
 		<property name="length">
-			<value>70.857142857142861</value>
+			<value>58.857142857142861</value>
 		</property>
 		<property name="looping">
 			<value>true</value>
@@ -177,7 +183,7 @@
 	</object>
 	<object class="SingleSound" id="{98018432-7873-4581-8f63-13f1743f809d}">
 		<property name="start">
-			<value>16</value>
+			<value>4</value>
 		</property>
 		<property name="length">
 			<value>27.428571428571427</value>
@@ -191,7 +197,7 @@
 	</object>
 	<object class="SingleSound" id="{61832478-bae4-4f62-ac3e-626b2e1c7484}">
 		<property name="start">
-			<value>43.428571428571431</value>
+			<value>31.428571428571431</value>
 		</property>
 		<property name="length">
 			<value>27.428571428571431</value>
@@ -219,7 +225,7 @@
 	</object>
 	<object class="LoopRegion" id="{e6702510-0f41-4ab1-98ed-1e1bbbdb75e4}">
 		<property name="position">
-			<value>43.428571428571431</value>
+			<value>31.428571428571431</value>
 		</property>
 		<property name="length">
 			<value>27.428571428571427</value>
@@ -239,7 +245,7 @@
 			<value>-80</value>
 		</property>
 		<property name="releaseTime">
-			<value>4634.61523</value>
+			<value>1400</value>
 		</property>
 		<property name="releaseShape">
 			<value>0.112210922</value>
@@ -288,7 +294,7 @@
 	<object class="MixerBusFader" id="{f6338a5b-579d-461c-911a-8685c0662e54}" />
 	<object class="AutomationPoint" id="{e02d5ce2-694c-42a2-a915-d31c063d827d}">
 		<property name="position">
-			<value>16</value>
+			<value>4</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -299,7 +305,7 @@
 	</object>
 	<object class="AutomationPoint" id="{c7305e59-2e33-4acf-8859-73296fee917e}">
 		<property name="position">
-			<value>35.428571428571445</value>
+			<value>23.428571428571445</value>
 		</property>
 		<property name="value">
 			<value>1</value>
