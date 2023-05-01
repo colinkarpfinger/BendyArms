@@ -27,6 +27,10 @@ public class DeliveryZone : MonoBehaviour
 
         if (other.attachedRigidbody.isKinematic)    //don't count it when still attached to tentacle 
             return;
+
+        if (!other.gameObject.CompareTag("Containers"))
+            return; 
+        
         audioSuccess.Play();
         gameManager.IncrementContainerCount();
         Destroy(other.gameObject);

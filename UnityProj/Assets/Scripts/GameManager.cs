@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public event TimerChanged timerChanged;
     void Start()
     {
+        Time.timeScale = 1;
         uiGameOver.gameObject.SetActive(false);
         containersDelivered = 0;
         timer = startTime;
@@ -58,5 +59,6 @@ public class GameManager : MonoBehaviour
     {
         //show game over screen or something 
         uiGameOver.gameObject.SetActive(true);
+        Time.timeScale = 0.01f;
     }
 }
