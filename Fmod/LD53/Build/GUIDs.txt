@@ -14,6 +14,7 @@
 {262d6b04-6ead-478e-9dc9-55eca860ed80} event:/Sfx/Gameplay/Pickup
 {fc116830-0906-4266-b2a1-9aa4ffcfd6f9} event:/Sfx/Gameplay/Propeller
 {5668e637-98a1-461c-b421-e9d224dc9917} event:/Sfx/Gameplay/Splash
+{66197b5d-50d3-46a0-962d-4ef66deb755c} event:/Sfx/Gameplay/Success
 {4da5abcd-dc25-4dcb-a1c4-6e62974817a7} event:/Sfx/Gameplay/Thud
 {67f40e8d-4338-470c-9f98-1a475691c16f} event:/Sfx/UI/MenuMusic
 {e484202e-e353-4c24-bba6-8d1c938f3bf1} parameter:/Containers
