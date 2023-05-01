@@ -53,7 +53,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 62857
+  Length: 58857
 --- !u!114 &-5945832819517339565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638185327570003668
+  cacheTime: 638185405162695088
   cacheVersion: 131603
 --- !u!114 &173336317990084069
 MonoBehaviour:
@@ -274,7 +274,7 @@ MonoBehaviour:
   - {fileID: -1965788984521596154}
   MinDistance: 1
   MaxDistance: 20
-  Length: 80908
+  Length: 89099
 --- !u!114 &1694878729652328426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,10 +290,10 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638185327570003668
+  lastModified: 638185405162695088
   FileSizes:
   - Name: Desktop
-    Value: 1370
+    Value: 1416
   Exists: 1
 --- !u!114 &3014702543574976938
 MonoBehaviour:
@@ -321,7 +321,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 200
-  Length: 3444
+  Length: 2250
 --- !u!114 &6303032706798099090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,8 +388,8 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638185327569978603
+  lastModified: 638185405162674971
   FileSizes:
   - Name: Desktop
-    Value: 9526400
+    Value: 9525536
   Exists: 1
