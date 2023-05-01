@@ -15,6 +15,6 @@ public class WaterLifto : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.localPosition = initalPosition + new Vector3(0, WaterRotato.RotatoSpeed - 0.3f, 0);
+        transform.localPosition = initalPosition + new Vector3(0, WaterRotato.RotatoSpeed / 3.0f - 0.2f, 0);
     }
 }

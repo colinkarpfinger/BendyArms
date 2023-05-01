@@ -136,7 +136,8 @@ Shader "Unlit/water2"
                 float4 bkColor = tex2D(_BottomTex, frac(preFract));
                 col = col * col.a + (1.0 - col.a) * bkColor * darken;
                 float4 blendAmt = clamp(noise(noiseCoord / 10.0 + float3(222, 0, 989)) * 4.0, 0.3, 0.7);
-                return col * (1.0 - blendAmt) + bkColor * blendAmt;
+                float height = (i.worldVertex.y + 5.0) / 10.0 * 0.8 + 0.2;
+                return (col * (1.0 - blendAmt) + bkColor * blendAmt) * height;
                 //return baseTextureHit;
                 //return float4(i.screenPos.xy / i.screenPos.w, 0.0, 1.0);
             }
