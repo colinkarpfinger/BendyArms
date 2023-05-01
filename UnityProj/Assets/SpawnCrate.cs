@@ -7,24 +7,24 @@ public class SpawnCrate : MonoBehaviour
 
     public GameObject[] cargoCrates;
     public GameObject spawnArea;
+    public int spawnCount = 100;
+    public int spawnAreaSize = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        for(int i = 0; i < spawnCount; i++) {
+            int cargoIndex = Random.Range(0, cargoCrates.Length);
+            Vector3 randomArea = Random.insideUnitSphere * spawnAreaSize;
+            Vector3 spawnPosition = new Vector3(spawnArea.transform.position.x + randomArea.x, -1.0f, spawnArea.transform.position.z + randomArea.z); 
+            Instantiate(cargoCrates[cargoIndex], spawnPosition, Quaternion.identity);
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        float spawnProbability = Random.Range(0.0f, 1.0f);
-        if(spawnProbability <= 0.001f) {
-            int cargoIndex = Random.Range(0, cargoCrates.Length);
-            Debug.Log(spawnProbability);
-            Vector3 randomArea = Random.insideUnitSphere * 5;
-            Vector3 spawnPosition = new Vector3(spawnArea.transform.position.x + randomArea.x, -1.0f, spawnArea.transform.position.z + randomArea.z); 
-            Instantiate(cargoCrates[cargoIndex], spawnPosition, Quaternion.identity);
 
-        }
     }
 }
