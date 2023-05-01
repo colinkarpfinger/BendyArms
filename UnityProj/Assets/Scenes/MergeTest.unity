@@ -634,7 +634,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &88628563
 MonoBehaviour:
@@ -677,8 +677,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 4, z: 1}
+  m_Center: {x: 0, y: -1.9, z: 0}
 --- !u!1 &97778909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,7 +1344,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &685208754
 Rigidbody:
@@ -2003,7 +2003,7 @@ Transform:
   - {fileID: 1819414893}
   - {fileID: 831987902}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &921858613
 MonoBehaviour:
@@ -3627,7 +3627,7 @@ PrefabInstance:
     - target: {fileID: 5067114961476554318, guid: b26f0b8d14579cc4b865743ea6033a89,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 5067114961476554318, guid: b26f0b8d14579cc4b865743ea6033a89,
         type: 3}
@@ -4019,7 +4019,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419140650
 GameObject:
@@ -4066,7 +4066,7 @@ Transform:
   m_Children:
   - {fileID: 1646932210}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460989161
 GameObject:
@@ -4924,7 +4924,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1533862850
 GameObject:
@@ -4963,6 +4963,7 @@ MonoBehaviour:
   spawnArea: {fileID: 750477034}
   spawnCount: 50
   spawnAreaSize: 200
+  spawnHeight: -0.2
 --- !u!4 &1533862852
 Transform:
   m_ObjectHideFlags: 0
@@ -4976,7 +4977,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551508919
 GameObject:
@@ -5364,7 +5365,7 @@ Transform:
   m_Children:
   - {fileID: 320229652}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1619435260
 MonoBehaviour:
@@ -6864,7 +6865,7 @@ PrefabInstance:
     - target: {fileID: 7604253958542447801, guid: 289c4511c6aa70b4f981672de7564bb3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7604253958542447801, guid: 289c4511c6aa70b4f981672de7564bb3,
         type: 3}
@@ -7941,7 +7942,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2122691334
 MeshRenderer:
@@ -8079,7 +8080,7 @@ PrefabInstance:
     - target: {fileID: 614123271368916649, guid: a9e77973058124b419c5fd769513d924,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 614123271368916649, guid: a9e77973058124b419c5fd769513d924,
         type: 3}
@@ -8136,14 +8137,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: CARGO_002
       objectReference: {fileID: 0}
+    - target: {fileID: 5627173696020620340, guid: a9e77973058124b419c5fd769513d924,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2268592291930522116, guid: a9e77973058124b419c5fd769513d924,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6970648205308361045}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e77973058124b419c5fd769513d924, type: 3}
 --- !u!4 &251429101554651173
 Transform:
@@ -11858,7 +11860,7 @@ PrefabInstance:
     - target: {fileID: 3861544078801632143, guid: 7907b6fcc57e4ff4cbaf81fcfe7b5b4e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3861544078801632143, guid: 7907b6fcc57e4ff4cbaf81fcfe7b5b4e,
         type: 3}
@@ -12310,12 +12312,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &6056656097305971041 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2268592291930522116, guid: a9e77973058124b419c5fd769513d924,
-    type: 3}
-  m_PrefabInstance: {fileID: 247411743041877911}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6082620466196142837
 GameObject:
   m_ObjectHideFlags: 0
@@ -12562,7 +12558,7 @@ Transform:
   - {fileID: 6335397328241830489}
   - {fileID: 1182140276128542630}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -206.889, z: 0}
 --- !u!1 &6410201267987985713
 GameObject:
@@ -13135,37 +13131,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6970648205308361045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056656097305971041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1302703053
-      Data2: 1305205797
-      Data3: 1651426465
-      Data4: -1491646313
-    Path: event:/Sfx/Gameplay/Thud
-  Event: 
-  PlayEvent: 7
-  StopEvent: 8
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 200
 --- !u!4 &6982906771056136218
 Transform:
   m_ObjectHideFlags: 0

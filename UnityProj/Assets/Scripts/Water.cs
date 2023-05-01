@@ -63,7 +63,7 @@ public class Water : MonoBehaviour
     {
         // generate mesh
         audioCollider = GetComponent<BoxCollider>();
-        audioCollider.size = new Vector3(width * scale, 1, height * scale);
+        audioCollider.size = new Vector3(width * scale, 5.0f, height * scale);
         meshFilter.sharedMesh = generateMeshGrid(width, height, scale);
     }
 
