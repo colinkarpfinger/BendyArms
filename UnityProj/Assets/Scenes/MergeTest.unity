@@ -367,6 +367,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 71800672}
+  - component: {fileID: 71800674}
+  - component: {fileID: 71800673}
   m_Layer: 0
   m_Name: Right End
   m_TagString: Untagged
@@ -383,12 +385,46 @@ Transform:
   m_GameObject: {fileID: 71800671}
   m_LocalRotation: {x: 0.023830926, y: -0.0000000015774793, z: 5.119504e-10, w: 0.999716}
   m_LocalPosition: {x: 0, y: 0.000253, z: 0.000023}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.0002, y: 0.0002, z: 0.0002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1465414355}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 2.731, y: 0, z: 0}
+--- !u!114 &71800673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71800671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64508f09721d75c499a1114c320af06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tentacleController: {fileID: 0}
+--- !u!135 &71800674
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71800671}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &78735769
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,8 +437,9 @@ GameObject:
   - component: {fileID: 78735773}
   - component: {fileID: 78735772}
   - component: {fileID: 78735771}
+  - component: {fileID: 78735774}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Left Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -494,6 +531,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78735769}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &78735774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78735769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64508f09721d75c499a1114c320af06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tentacleController: {fileID: 0}
 --- !u!1 &88628558
 GameObject:
   m_ObjectHideFlags: 0
@@ -3832,6 +3882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorTransform: {fileID: 2122691333}
   smoothTime: 0.2
+  Velocity: {x: 0, y: 0, z: 0}
 --- !u!23 &1400369567
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4736,6 +4787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorTransform: {fileID: 2122691333}
   smoothTime: 0.2
+  Velocity: {x: 0, y: 0, z: 0}
 --- !u!23 &1531875046
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5861,7 +5913,7 @@ GameObject:
   - component: {fileID: 1690788756}
   - component: {fileID: 1690788755}
   m_Layer: 0
-  m_Name: ARMS1
+  m_Name: Tentacle Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5915,6 +5967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1690788755}
   hoverTransform: {fileID: 1419140652}
+  boatRigidbody: {fileID: 3215023987523710684}
   cmVirtualCamera: {fileID: 0}
   mainCamera: {fileID: 1619435255}
   cursorMain: {fileID: 2122691333}
@@ -5926,6 +5979,8 @@ MonoBehaviour:
   cursorLeftDefault: {fileID: 625358415}
   cursorRight: {fileID: 1531875045}
   cursorLeft: {fileID: 1400369566}
+  tentacleColliderRight: {fileID: 71800673}
+  tentacleColliderLeft: {fileID: 78735774}
   ikLeft: {fileID: 802125711}
   ikRight: {fileID: 1697983017}
   distMult: 4

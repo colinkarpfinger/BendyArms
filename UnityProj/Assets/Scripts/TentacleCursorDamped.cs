@@ -8,7 +8,7 @@ public class TentacleCursorDamped : MonoBehaviour
     [Range(0f,1f)]
     [SerializeField] private float smoothTime = 0.2f;
 
-    private Vector3 velocity;
+    public Vector3 Velocity;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,6 @@ public class TentacleCursorDamped : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, cursorTransform.position, ref velocity, smoothTime);
+        transform.position = Vector3.SmoothDamp(transform.position, cursorTransform.position, ref Velocity, smoothTime);
     } 
 }

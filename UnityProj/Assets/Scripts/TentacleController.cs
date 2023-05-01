@@ -10,6 +10,7 @@ public class TentacleController : MonoBehaviour
 {
     [SerializeField] private PlayerInputControllerRewired playerInput;
     [SerializeField] private Transform hoverTransform;
+    [SerializeField] private Rigidbody boatRigidbody;   //used to set velocity of crates when releasing them 
     [SerializeField] private CinemachineVirtualCamera cmVirtualCamera;
 
     [SerializeField] private Camera mainCamera;
@@ -23,6 +24,8 @@ public class TentacleController : MonoBehaviour
     [SerializeField] private Transform cursorLeftDefault;
     [SerializeField] private TentacleCursorDamped cursorRight;
     [SerializeField] private TentacleCursorDamped cursorLeft;
+    [SerializeField] private TentacleCollider tentacleColliderRight;
+    [SerializeField] private TentacleCollider tentacleColliderLeft;
     
     
     
@@ -33,11 +36,11 @@ public class TentacleController : MonoBehaviour
     
     [SerializeField] private LayerMask layersToPickUp;
     [SerializeField] private LayerMask layersToMouseOver;
-
-    private bool isHoldingObject = false;
+    
     private TentacleSide currentSide = TentacleSide.Left;
 
     private Rigidbody carriedObjectRb;
+    private Rigidbody targetObject;
     public enum TentacleSide
     {
         Right,
@@ -49,16 +52,32 @@ public class TentacleController : MonoBehaviour
 
     public static int containerCount = 0;
 
+
+    private enum TentacleState
+    {
+        Free,
+        MovingToTarget,
+        HoldingObject
+    }
+
+    private TentacleState state;
+    
     private void OnEnable()
     {
         playerInput.firePrimary.down += TryToPickUp;
         playerInput.firePrimary.up += TryToRelease;
+
+        tentacleColliderLeft.tentacleCollided += TentacleCollidedLeft;
+        tentacleColliderRight.tentacleCollided += TentacleCollidedRight;
     }
 
     private void OnDisable()
     {
         playerInput.firePrimary.down -= TryToPickUp;
         playerInput.firePrimary.up -= TryToRelease;
+        
+        tentacleColliderLeft.tentacleCollided -= TentacleCollidedLeft;
+        tentacleColliderRight.tentacleCollided -= TentacleCollidedRight;
     }
 
     private void TryToPickUp()
@@ -71,34 +90,20 @@ public class TentacleController : MonoBehaviour
             
             if (hit.rigidbody)
             {
-                isHoldingObject = true;
-                carriedObjectRb = hit.rigidbody;
-                hit.rigidbody.isKinematic = true;
+                targetObject = hit.rigidbody;
+                SetState(TentacleState.MovingToTarget);
                 pickUpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Pickup");
                 containerCount += 1;
                 // Colin I'm taking the jump to behavior
                 if (currentSide == TentacleSide.Left)
                 {
+                    cursorLeft.SetCursorTransform(targetObject.transform);  //make the tentacle move towards the target object 
                     pickUpSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleLeftFinalLimb));
-
-                    var offset = hit.point - hit.transform.position;
-                    Debug.Log("offset; "+offset.ToString());
-                    hit.transform.parent = tentacleLeftFinalLimb.parent;
-                    hit.transform.localPosition = Vector3.zero;
-                    hit.transform.localRotation = Quaternion.identity;
-                    // hit.transform.rotation =
-                  //      Quaternion.LookRotation(tentacleLeftFinalLimb.right, tentacleLeftFinalLimb.up);
                 }
                 else
                 {
-                    //hit.transform.parent = tentacleRightFinalLimb.parent;
+                    cursorRight.SetCursorTransform(targetObject.transform);
                     pickUpSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleRightFinalLimb));
-                    
-                    var offset = hit.point - hit.transform.position;
-                    Debug.Log("offset; "+offset.ToString());
-                    hit.transform.parent = tentacleRightFinalLimb.parent;
-                    hit.transform.localPosition = Vector3.zero;
-                    hit.transform.localRotation = Quaternion.identity;
                 }
                 
                 pickUpSound.start();
@@ -108,40 +113,129 @@ public class TentacleController : MonoBehaviour
         }
     }
 
-    public void TentacleCollided(Collider collider)
+    public void TentacleCollidedRight(Collider hitCollider)
     {
+        PickupObject(hitCollider);
+    }
+    public void TentacleCollidedLeft(Collider hitCollider)
+    {
+        PickupObject(hitCollider);
+    }
+
+    void PickupObject(Collider hitCollider)
+    {
+        if (state != TentacleState.MovingToTarget)
+            return;
         
+        var rb = hitCollider.GetComponent<Rigidbody>();
+        if (!rb)
+            return;
+
+        Debug.Log("TentacleController: Got valid collision pick up event");
+        carriedObjectRb = rb;
+        rb.interpolation = RigidbodyInterpolation.None;
+        rb.isKinematic = true;
+        if (currentSide == TentacleSide.Left)
+        {
+            rb.transform.SetParent(tentacleColliderLeft.transform);
+            cursorLeft.SetCursorTransform(cursorMain); 
+        }
+        if (currentSide == TentacleSide.Right)
+        {
+            rb.transform.SetParent(tentacleColliderRight.transform);
+            cursorRight.SetCursorTransform(cursorMain); 
+        }
+        SetState(TentacleState.HoldingObject);
+    }
+    private void SetState(TentacleState newState)
+    {
+        state = newState;
+        Debug.Log("Tentacle: Setting state to: "+state.ToString());
+        //do other stuff on state transition if needed
+        if (state == TentacleState.Free)
+        {
+            if (!carriedObjectRb)
+                return;
+            carriedObjectRb.isKinematic = false;
+            carriedObjectRb.interpolation = RigidbodyInterpolation.Interpolate;
+            carriedObjectRb.transform.parent = null;
+
+            //release the crate w the velocity of the boat plus the velocity of the current cursor ...  
+            //i think the cursor velocity tends to include the boat velocity, so only adding the cursor velocity right now
+            
+            var objectVelocity = Vector3.zero;//boatRigidbody.velocity;
+            if (currentSide == TentacleSide.Left)
+                objectVelocity += cursorLeft.Velocity;
+            if (currentSide == TentacleSide.Right)
+                objectVelocity += cursorRight.Velocity;
+            
+            
+            carriedObjectRb.velocity = objectVelocity;
+            carriedObjectRb = null;
+            
+            
+            //reset cursor from target object to default cursor 
+            if (currentSide == TentacleSide.Left)
+                cursorLeft.SetCursorTransform(cursorMain);
+            else
+                cursorRight.SetCursorTransform(cursorMain);
+        }
+        else if (state == TentacleState.HoldingObject)
+        {
+            
+        }
     }
 
     private void TryToRelease()
     {
-        if (!carriedObjectRb)
+        if (state == TentacleState.Free)
             return;
 
-        dropSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Drop");
-        if(currentSide == TentacleSide.Left) {
-            Debug.Log("Setting left");
-            dropSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleLeftFinalLimb));
-        } else {
-            dropSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleRightFinalLimb));
+        if (state == TentacleState.MovingToTarget) // were trying to pick something up but released button before it collided 
+        {
+            SetState(TentacleState.Free);
         }
-        dropSound.start();
-        dropSound.release();
+        else if (state == TentacleState.HoldingObject)
+        {
+            dropSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Drop");
+            if (currentSide == TentacleSide.Left)
+            {
+                Debug.Log("Setting left");
+                dropSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleLeftFinalLimb));
+            }
+            else
+            {
+                dropSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(tentacleRightFinalLimb));
+            }
 
-        carriedObjectRb.isKinematic = false;
-        //carriedObjectRb
-        carriedObjectRb.transform.parent = null;
-        
-        isHoldingObject = false;
-        carriedObjectRb = null;
+            dropSound.start();
+            dropSound.release();
+            SetState(TentacleState.Free);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateCursors();
+        
+        RunState();
     }
 
+    void RunState()
+    {
+        if (state == TentacleState.Free)
+        {
+            UpdateCursors();
+        }
+        else if (state == TentacleState.MovingToTarget)
+        {
+            
+        }
+        else if (state == TentacleState.HoldingObject)
+        {
+            UpdateCursors();
+        }
+    }
     void UpdateCursors()
     {
         RaycastHit hit;
@@ -153,16 +247,16 @@ public class TentacleController : MonoBehaviour
             // Do something with the object that was hit by the raycast.
             cursorMain.position = new Vector3(hit.point.x, hoverTransform.position.y, hit.point.z);
 
-
-            if (isHoldingObject)
-                return;
-            
             var distRight = Vector3.Distance(cursorMain.position, tentacleRightOrigin.position);
             var distLeft = Vector3.Distance(cursorMain.position, tentacleLeftOrigin.position);
             var weightLeft = Mathf.Clamp((distRight - distLeft) / distMult, minWeight, 1f); 
             var weightRight = Mathf.Clamp((distLeft - distRight) / distMult, minWeight, 1f); 
             //Debug.Log("right: "+distRight.ToString()+"weight: "+weightRight.ToString()+" left: "+distLeft.ToString()+" weight: "+weightLeft.ToString() );
 
+            if (state == TentacleState.HoldingObject)   //don't switch hands if we are holding an object 
+            {
+                return;
+            }
 
             if (distRight < distLeft)
             {

@@ -67,12 +67,12 @@ namespace BendyArms
             if(_move.y > 0) {
                 //Debug.Log(_move.y);
 	            if(state == FMOD.Studio.PLAYBACK_STATE.STOPPED){
-                    Debug.Log("Start sound!");
+                    //Debug.Log("Start sound!");
                     propellerSound.start();
                 }
             } else {
                 if(state != FMOD.Studio.PLAYBACK_STATE.STOPPED){
-                    Debug.Log("Stop sound!");
+                   // Debug.Log("Stop sound!");
                     propellerSound.keyOff();
                 }
             }
