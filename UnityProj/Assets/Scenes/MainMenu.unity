@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f260909597bd4c34e86988e4d9222f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGameScene: MergeTest_newMovement
+  newGameScene: Level
   animators:
   - {fileID: 2112328116}
   - {fileID: 950068453}
