@@ -11,6 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 80c18bcb3e386994bbbb177f1a8b95a6
+    path: Assets/Scenes/loader.unity
+    guid: b928752f6f95f74458af5bdd2d49a3e4
   - enabled: 1
     path: Assets/Scenes/MergeTest.unity
     guid: f550349ed35b14b8184d6dbea4ec8c3a

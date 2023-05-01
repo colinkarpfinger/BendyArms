@@ -5,27 +5,31 @@ public class Water : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    [SerializeField] private Material waterMaterial;
+
     [SerializeField] private MeshFilter meshFilter;
 
     private Vector3[] waterVerts;
 
-    private int width = 150;
-    private int height = 150;
+    private int width = 110;
+    private int height = 110;
 
-    private float scale = 1.0f;
+    private float scale = 3.5f;
 
     public static float WaterTime = 0.0f;
-
+    private BoxCollider audioCollider;
 
     Mesh generateMeshGrid(int width, int height, float scale) {
         Mesh mesh = new Mesh();
         int[,] arrayValues = new int[width, height];
         Vector3[] vertices = new Vector3[width * height];
+        Vector2[] timeTex = new Vector2[width * height];
         int index = 0;
         for (int x = 0;x < width;x++)
         {
             for (int z = 0;z < height;z++)
             {
+                timeTex[index] = new Vector2(0.0f, 0.0f);
                 vertices[index++] = new Vector3((x - ((float)width/2.0f)) * scale, 0.0f, (z - ((float)height/2.0f)) * scale); // Some scaling might be needed
             }
         }
@@ -47,6 +51,7 @@ public class Water : MonoBehaviour
         }
         mesh.vertices = vertices;
         mesh.triangles = triangles;
+        mesh.SetUVs(0, timeTex);
         mesh.MarkDynamic();
         mesh.MarkModified();
         // oh god a side effect make it stop!!!!
@@ -57,11 +62,14 @@ public class Water : MonoBehaviour
     void Start()
     {
         // generate mesh
+        audioCollider = GetComponent<BoxCollider>();
+        audioCollider.size = new Vector3(width * scale, 1, height * scale);
         meshFilter.sharedMesh = generateMeshGrid(width, height, scale);
     }
 
     public static float ComputeWaterHeight(float x, float z, float time) {
-       return (Mathf.PerlinNoise(x / 15.0f + time / 5.0f, z / 15.0f + time / 5.0f) - 0.5f) * 3.0f;
+       return (Mathf.PerlinNoise(x / 15.0f + time / 5.0f, z / 15.0f + time / 5.0f) - 0.5f) * 2.0f;
+       //return 0.0f;
     }
 
     // Update is called once per frame
@@ -70,6 +78,7 @@ public class Water : MonoBehaviour
         WaterTime += Time.deltaTime;
         int index = 0;
         Vector3[] displayVerts = new Vector3[width * height];
+        Vector2[] timeTex = new Vector2[width * height];
         for (int x = 0;x < width;x++)
         {
             for (int z = 0;z < height;z++)
@@ -83,9 +92,11 @@ public class Water : MonoBehaviour
 
                 transformedVert.y = ComputeWaterHeight(this.waterVerts[currIdx].x + scaleJumper.x, this.waterVerts[currIdx].z + scaleJumper.z, WaterTime);
                 displayVerts[currIdx] = transformedVert;
+                timeTex[currIdx] = new Vector2(WaterTime, 0.0f);
             }
         }
         meshFilter.sharedMesh.vertices = displayVerts;
+        meshFilter.sharedMesh.SetUVs(0, timeTex);
         meshFilter.sharedMesh.RecalculateNormals();
     }
 }

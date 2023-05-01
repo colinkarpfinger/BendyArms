@@ -17,8 +17,8 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("following");
-        Debug.Log(followTransform.position);
-        transform.position = followTransform.position + offset;
+        //Debug.Log("following");
+        //Debug.Log(followTransform.position);
+        transform.position = new Vector3(followTransform.position.x, 0.0f, followTransform.position.z) + offset;
     }
 }
