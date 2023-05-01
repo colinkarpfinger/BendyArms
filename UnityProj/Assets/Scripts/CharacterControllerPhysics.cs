@@ -22,12 +22,17 @@ namespace BendyArms
         [SerializeField] private Transform cubeVert11;
         [SerializeField] private Transform cubeVert01;
 
+        [SerializeField] private FMOD.Studio.EventInstance propellerSound; 
+        
+        private Transform motor;
         //private Transform[] buoyancyVerts;
 
         void Start()
         {
             //rigidbody.useGravity = false;
             //buoyancyVerts = new Transform[]{cubeVert00, cubeVert01, cubeVert11, cubeVert10};
+            propellerSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Propeller");
+            motor = transform.Find("Motor");
         }
 
         // Update is called once per frame
@@ -35,6 +40,8 @@ namespace BendyArms
         {
             if (playerInput)
                 SetInputs();
+
+            propellerSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(motor.gameObject));
         }
 
         private void FixedUpdate()
@@ -52,7 +59,22 @@ namespace BendyArms
             }*/
             float fwdProjection = Vector3.Dot(rigidbody.transform.forward, rigidbody.velocity);
             WaterRotato.RotatoSpeed = fwdProjection * 0.2f;
-            PropellerRotato.ProperllerRotatoSpeed = fwdProjection * 0.03f;
+            PropellerRotato.ProperllerRotatoSpeed = fwdProjection * 0.3f;
+
+            FMOD.Studio.PLAYBACK_STATE state;   
+	        propellerSound.getPlaybackState(out state);
+            if(_move.y > 0) {
+                //Debug.Log(_move.y);
+	            if(state == FMOD.Studio.PLAYBACK_STATE.STOPPED){
+                    Debug.Log("Start sound!");
+                    propellerSound.start();
+                }
+            } else {
+                if(state != FMOD.Studio.PLAYBACK_STATE.STOPPED){
+                    Debug.Log("Stop sound!");
+                    propellerSound.keyOff();
+                }
+            }
         }
 
         void SetInputs()
