@@ -33,6 +33,7 @@ public class TentacleController : MonoBehaviour
     [SerializeField] private CCDIK ikRight;
     [SerializeField] private float distMult = 2f;
     [SerializeField] private float minWeight = 0.1f;
+    [SerializeField] private float maxReleaseVelocity = 30f;
     
     [SerializeField] private LayerMask layersToPickUp;
     [SerializeField] private LayerMask layersToMouseOver;
@@ -170,7 +171,7 @@ public class TentacleController : MonoBehaviour
                 objectVelocity += cursorRight.Velocity;
             
             
-            carriedObjectRb.velocity = objectVelocity;
+            carriedObjectRb.velocity = Vector3.ClampMagnitude(objectVelocity, maxReleaseVelocity);
             carriedObjectRb = null;
             
             
