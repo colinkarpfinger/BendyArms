@@ -124,7 +124,7 @@ MonoBehaviour:
   Name: Containers
   StudioPath: 
   Min: 0
-  Max: 100
+  Max: 20
   Default: 0
   ID:
     data1: 153101441
@@ -190,7 +190,7 @@ MonoBehaviour:
   - {fileID: 8488199493654378861}
   StringsBanks:
   - {fileID: 1694878729652328426}
-  cacheTime: 638184867144451493
+  cacheTime: 638184887580595644
   cacheVersion: 131603
 --- !u!114 &173336317990084069
 MonoBehaviour:
@@ -262,7 +262,7 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638184867144451493
+  lastModified: 638184887580595644
   FileSizes:
   - Name: Desktop
     Value: 1326
@@ -336,7 +336,7 @@ MonoBehaviour:
   Name: Containers
   StudioPath: 
   Min: 0
-  Max: 100
+  Max: 20
   Default: 0
   ID:
     data1: 153101441
@@ -360,7 +360,7 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638184867144425629
+  lastModified: 638184887580575579
   FileSizes:
   - Name: Desktop
     Value: 7412672

@@ -47,6 +47,8 @@ public class TentacleController : MonoBehaviour
     [SerializeField] public FMOD.Studio.EventInstance pickUpSound;
     [SerializeField] public FMOD.Studio.EventInstance dropSound;
 
+    public static int containerCount = 0;
+
     private void OnEnable()
     {
         playerInput.firePrimary.down += TryToPickUp;
@@ -73,7 +75,7 @@ public class TentacleController : MonoBehaviour
                 carriedObjectRb = hit.rigidbody;
                 hit.rigidbody.isKinematic = true;
                 pickUpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Pickup");
-
+                containerCount += 1;
                 // Colin I'm taking the jump to behavior
                 if (currentSide == TentacleSide.Left)
                 {

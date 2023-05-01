@@ -9,7 +9,6 @@ public class Music : MonoBehaviour
     private Text containerText;
     private FMOD.Studio.EventInstance instance;
     private BeatSystem bS;
-    private int containerCount;
 
     void Start()
     {
@@ -18,18 +17,14 @@ public class Music : MonoBehaviour
         instance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Gameplay/BGM_layered");
         instance.start();
         bS.AssignBeatEvent(instance); 
-        containerCount = 0;
     }
 
     void Update() 
     {
-        //containerText.text = "Containers: " + containerCount.ToString();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            containerCount += 1;
-        }
+
         if(BeatSystem.marker == "Switch") {
-            instance.setParameterByName("Containers", containerCount);
+            Debug.Log(TentacleController.containerCount);
+            instance.setParameterByName("Containers", TentacleController.containerCount);
         }
         //Debug.Log(BeatSystem.beat);
         //Debug.Log(BeatSystem.marker);
