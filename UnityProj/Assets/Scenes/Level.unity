@@ -9863,8 +9863,8 @@ MonoBehaviour:
   - {fileID: 8821094942226095005, guid: b26f0b8d14579cc4b865743ea6033a89, type: 3}
   - {fileID: 3914890537327951122, guid: 289c4511c6aa70b4f981672de7564bb3, type: 3}
   spawnArea: {fileID: 1797602391}
-  spawnCount: 50
-  spawnAreaSize: 200
+  spawnCount: 10
+  spawnAreaSize: 100
   spawnHeight: 0
 --- !u!4 &1969721913
 Transform:

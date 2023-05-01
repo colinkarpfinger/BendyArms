@@ -52,5 +52,6 @@ public class UIGameOver : MonoBehaviour
     public void ButtonPressedResume()
     {
         SetState(UiState.Disabled);
+        Time.timeScale = 1;
     }
 }
