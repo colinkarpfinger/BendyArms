@@ -624,7 +624,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.4, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &97778909
 GameObject:
   m_ObjectHideFlags: 0
@@ -11428,6 +11428,7 @@ GameObject:
   - component: {fileID: 2070475572983932076}
   - component: {fileID: 2070475572983932078}
   - component: {fileID: 2070475572983932077}
+  - component: {fileID: 2070475572983932079}
   m_Layer: 6
   m_Name: CARGO_005
   m_TagString: Untagged
@@ -12024,6 +12025,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2070475572983932079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049149404277936283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Water
+  EventReference:
+    Guid:
+      Data1: 1449715255
+      Data2: 1176279201
+      Data3: -756473420
+      Data4: 395959332
+    Path: event:/Sfx/Gameplay/Splash
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 200
 --- !u!4 &2142482744705898363
 Transform:
   m_ObjectHideFlags: 0
@@ -14903,6 +14935,7 @@ GameObject:
   - component: {fileID: 2210200308137683378}
   - component: {fileID: 6970648205308361042}
   - component: {fileID: 6970648205308361043}
+  - component: {fileID: 6970648205308361044}
   m_Layer: 6
   m_Name: CARGO_002
   m_TagString: Untagged
@@ -15384,6 +15417,7 @@ GameObject:
   - component: {fileID: 3288550630420405082}
   - component: {fileID: 6629835708152600548}
   - component: {fileID: 6629835708152600547}
+  - component: {fileID: 6629835708152600549}
   m_Layer: 6
   m_Name: CARGO_006
   m_TagString: Untagged
@@ -15439,6 +15473,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6629835708152600549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629835708152600546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Water
+  EventReference:
+    Guid:
+      Data1: 1449715255
+      Data2: 1176279201
+      Data3: -756473420
+      Data4: 395959332
+    Path: event:/Sfx/Gameplay/Splash
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 200
 --- !u!1 &6633020535623522655
 GameObject:
   m_ObjectHideFlags: 0
@@ -15876,6 +15941,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0000002, y: 1.6001931, z: 8.437293}
   m_Center: {x: 0, y: -0.19990344, z: 0}
+--- !u!114 &6970648205308361044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056656097305971041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Water
+  EventReference:
+    Guid:
+      Data1: 1449715255
+      Data2: 1176279201
+      Data3: -756473420
+      Data4: 395959332
+    Path: event:/Sfx/Gameplay/Splash
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 200
 --- !u!4 &6982906771056136218
 Transform:
   m_ObjectHideFlags: 0
@@ -16081,6 +16177,7 @@ GameObject:
   - component: {fileID: 8401349485536803266}
   - component: {fileID: 8401349485536803267}
   - component: {fileID: 8401349485536803268}
+  - component: {fileID: 8401349485536803269}
   m_Layer: 6
   m_Name: CARGO_001
   m_TagString: Untagged
@@ -17033,6 +17130,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0000002, y: 1.6001931, z: 8.437293}
   m_Center: {x: 0, y: -0.19990344, z: 0}
+--- !u!114 &8401349485536803269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183483110875442944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Water
+  EventReference:
+    Guid:
+      Data1: 1449715255
+      Data2: 1176279201
+      Data3: -756473420
+      Data4: 395959332
+    Path: event:/Sfx/Gameplay/Splash
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 200
 --- !u!137 &8439356863604322679
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
