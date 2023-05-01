@@ -2,23 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIGameOver : MonoBehaviour
 {
     [SerializeField] private string sceneName;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private Button buttonResume;
+  
+    public enum UiState
     {
-        
+        GameOver,
+        Paused,
+        Disabled
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetState(UiState state)
     {
-        
+        if (state == UiState.Disabled)
+        {
+            this.gameObject.SetActive(false);
+        }
+        else if (state == UiState.Paused)
+        {
+            this.gameObject.SetActive(true);
+            text.SetText("Paused");
+            buttonResume.gameObject.SetActive(true);
+        }
+        else if (state == UiState.GameOver)
+        {   
+            this.gameObject.SetActive(true);
+            text.SetText("Game Over");
+            buttonResume.gameObject.SetActive(false);
+            
+        }
     }
-
     public void ButtonPressRestart()
     {
         this.gameObject.SetActive(false);
@@ -28,5 +47,10 @@ public class UIGameOver : MonoBehaviour
     public void ButtonPressQuit()
     {
         Application.Quit();
+    }
+
+    public void ButtonPressedResume()
+    {
+        SetState(UiState.Disabled);
     }
 }
