@@ -65,7 +65,7 @@ public class TentacleController : MonoBehaviour
     
     private void OnEnable()
     {
-        playerInput.firePrimary.down += TryToPickUp;
+        //playerInput.firePrimary.down += TryToPickUp; //moving to update loop so you can hold the button down 
         playerInput.firePrimary.up += TryToRelease;
 
         tentacleColliderLeft.tentacleCollided += TentacleCollidedLeft;
@@ -74,7 +74,7 @@ public class TentacleController : MonoBehaviour
 
     private void OnDisable()
     {
-        playerInput.firePrimary.down -= TryToPickUp;
+        //playerInput.firePrimary.down -= TryToPickUp;
         playerInput.firePrimary.up -= TryToRelease;
         
         tentacleColliderLeft.tentacleCollided -= TentacleCollidedLeft;
@@ -183,7 +183,7 @@ public class TentacleController : MonoBehaviour
         }
         else if (state == TentacleState.HoldingObject)
         {
-            
+            targetObject = null;
         }
     }
 
@@ -218,7 +218,6 @@ public class TentacleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         RunState();
     }
 
@@ -227,6 +226,10 @@ public class TentacleController : MonoBehaviour
         if (state == TentacleState.Free)
         {
             UpdateCursors();
+            if (playerInput.firePrimary.value)
+            {
+                TryToPickUp();
+            }
         }
         else if (state == TentacleState.MovingToTarget)
         {
