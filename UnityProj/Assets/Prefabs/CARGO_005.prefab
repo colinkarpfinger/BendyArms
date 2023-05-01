@@ -934,7 +934,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8821094942226095005}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -948,7 +948,7 @@ MonoBehaviour:
       Data4: 395959332
     Path: event:/Sfx/Gameplay/Splash
   Event: 
-  PlayEvent: 3
+  PlayEvent: 0
   StopEvent: 4
   AllowFadeout: 1
   TriggerOnce: 0
