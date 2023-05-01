@@ -1,14 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using BendyArms;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private PlayerInputControllerRewired playerInput;  // for pause
     [SerializeField] private int startTime = 60;
     [SerializeField] private int timeBonusPerContainer = 5;
     [SerializeField] private UIGameOver uiGameOver;
     private int containersDelivered = 0;
     private int timer;
+
+    private bool isPaused = false;
 
     public delegate void ScoreChanged(int containers);
 
@@ -17,10 +22,36 @@ public class GameManager : MonoBehaviour
     public delegate void TimerChanged(int timeLeft);
 
     public event TimerChanged timerChanged;
+
+    private void OnEnable()
+    {
+        playerInput.pauseMenu.down += PauseGame;
+    }
+
+    private void OnDisable()
+    {
+        playerInput.pauseMenu.down -= PauseGame;
+    }
+
+    private void PauseGame()
+    {
+        isPaused = !isPaused;
+        if (isPaused)
+        {
+            uiGameOver.SetState(UIGameOver.UiState.Paused);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            uiGameOver.SetState(UIGameOver.UiState.Disabled);
+            Time.timeScale = 1;
+        }
+    }
+
     void Start()
     {
         Time.timeScale = 1;
-        uiGameOver.gameObject.SetActive(false);
+        uiGameOver.SetState(UIGameOver.UiState.Disabled);
         containersDelivered = 0;
         timer = startTime;
         StartCoroutine(UpdateTime());
@@ -58,7 +89,7 @@ public class GameManager : MonoBehaviour
     void TimerEnded()
     {
         //show game over screen or something 
-        uiGameOver.gameObject.SetActive(true);
-        Time.timeScale = 0.01f;
+        Time.timeScale = 0f;
+        uiGameOver.SetState(UIGameOver.UiState.GameOver);
     }
 }
