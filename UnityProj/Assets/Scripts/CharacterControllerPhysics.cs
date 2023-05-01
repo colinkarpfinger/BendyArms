@@ -52,7 +52,7 @@ namespace BendyArms
             }*/
             float fwdProjection = Vector3.Dot(rigidbody.transform.forward, rigidbody.velocity);
             WaterRotato.RotatoSpeed = fwdProjection * 0.2f;
-            PropellerRotato.ProperllerRotatoSpeed = fwdProjection * 0.1f;
+            PropellerRotato.ProperllerRotatoSpeed = fwdProjection * 0.03f;
         }
 
         void SetInputs()
@@ -64,6 +64,7 @@ namespace BendyArms
         void SetDirectionals(Vector2 values)
         {
             _move = values;
+            _move.x *= -1;
         }
     }
 
