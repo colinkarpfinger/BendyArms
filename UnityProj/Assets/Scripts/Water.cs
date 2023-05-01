@@ -68,8 +68,8 @@ public class Water : MonoBehaviour
     }
 
     public static float ComputeWaterHeight(float x, float z, float time) {
-       //return (Mathf.PerlinNoise(x / 15.0f + time / 5.0f, z / 15.0f + time / 5.0f) - 0.5f) * 3.0f;
-       return 0.0f;
+       return (Mathf.PerlinNoise(x / 15.0f + time / 5.0f, z / 15.0f + time / 5.0f) - 0.5f) * 10.0f;
+       //return 0.0f;
     }
 
     // Update is called once per frame
