@@ -17,6 +17,8 @@ public class Music : MonoBehaviour
         instance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Gameplay/BGM_layered");
         instance.start();
         bS.AssignBeatEvent(instance); 
+        
+        instance.setParameterByName("Containers", 0);
     }
 
     void Update() 

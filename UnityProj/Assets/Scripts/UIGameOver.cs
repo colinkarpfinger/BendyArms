@@ -35,7 +35,6 @@ public class UIGameOver : MonoBehaviour
             this.gameObject.SetActive(true);
             text.SetText("Game Over");
             buttonResume.gameObject.SetActive(false);
-            Floater.shouldSink = true;
         }
     }
     public void ButtonPressRestart()
