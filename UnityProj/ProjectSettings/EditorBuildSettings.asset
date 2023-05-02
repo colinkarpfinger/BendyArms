@@ -11,13 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 330753487a3b5e44ca56b644da482335
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MergeTest.unity
     guid: f550349ed35b14b8184d6dbea4ec8c3a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MergeTest_gameplayloop.unity
     guid: 6a6e1e358f3b75a498ab72705f577aeb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MergeTest_newMovement.unity
     guid: 9044681ae85ff97438082f1520641980
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 4e67e725bd36c264e8eb8f851127153f
   m_configObjects: {}
