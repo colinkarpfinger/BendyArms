@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using BendyArms;
+using Cinemachine;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private PlayerInputControllerRewired playerInput;  // for pause
+    [SerializeField] private CinemachineVirtualCamera cam;
     [SerializeField] private int startTime = 60;
     [SerializeField] private int timeBonusPerContainer = 5;
     [SerializeField] private UIGameOver uiGameOver;
@@ -89,7 +91,8 @@ public class GameManager : MonoBehaviour
     void TimerEnded()
     {
         //show game over screen or something 
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         uiGameOver.SetState(UIGameOver.UiState.GameOver);
+        cam.Follow = null;
     }
 }
