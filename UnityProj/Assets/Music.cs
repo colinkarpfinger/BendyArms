@@ -19,6 +19,7 @@ public class Music : MonoBehaviour
         bS.AssignBeatEvent(instance); 
         
         instance.setParameterByName("Containers", 0);
+        TentacleController.containerCount = 0;
     }
 
     void Update() 

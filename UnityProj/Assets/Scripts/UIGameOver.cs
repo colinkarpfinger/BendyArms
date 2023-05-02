@@ -37,12 +37,20 @@ public class UIGameOver : MonoBehaviour
             buttonResume.gameObject.SetActive(false);
         }
     }
-    public void ButtonPressRestart()
-    {
-        this.gameObject.SetActive(false);
+    
+    private IEnumerator RestartLevel() {
+        
         FMOD.Studio.Bus masterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        
+        yield return new WaitForSecondsRealtime(2);
+        this.gameObject.SetActive(false);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ButtonPressRestart()
+    {
+        StartCoroutine(RestartLevel());
     }
 
     public void ButtonPressQuit()
