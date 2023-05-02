@@ -41,6 +41,8 @@ public class UIGameOver : MonoBehaviour
     public void ButtonPressRestart()
     {
         this.gameObject.SetActive(false);
+        FMOD.Studio.Bus masterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
+        masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         SceneManager.LoadScene(sceneName);
     }
 
