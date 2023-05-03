@@ -400,8 +400,8 @@ MonoBehaviour:
   MasterBanks:
   - {fileID: 5058426525691437563}
   StringsBanks:
-  - {fileID: -8419025279212391560}
-  cacheTime: 638186138803746196
+  - {fileID: 7761757256830331647}
+  cacheTime: 638185692988609315
   cacheVersion: 131603
 --- !u!114 &97879886981975112
 MonoBehaviour:
@@ -579,7 +579,7 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638185703495597158
+  lastModified: 638185692988583722
   FileSizes:
   - Name: Desktop
     Value: 10329376
@@ -803,7 +803,7 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638185674648572212
+  lastModified: 638185692988609315
   FileSizes:
   - Name: Desktop
     Value: 1512

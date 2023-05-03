@@ -61,6 +61,9 @@ public class GameManager : MonoBehaviour
 
     public void IncrementContainerCount()
     {
+        if (timer <= 0)
+            return;
+        
         containersDelivered++;
         timer += timeBonusPerContainer;
         Debug.Log("Containers Delivered: "+containersDelivered.ToString());
@@ -94,5 +97,6 @@ public class GameManager : MonoBehaviour
         //Time.timeScale = 0f;
         uiGameOver.SetState(UIGameOver.UiState.GameOver);
         cam.Follow = null;
+        Floater.shouldSink = true;
     }
 }
