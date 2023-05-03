@@ -1,25 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8419025279212391560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638186138803746196
-  FileSizes:
-  - Name: Desktop
-    Value: 1512
-  Exists: 1
 --- !u!114 &-7320791082982394027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,7 +361,6 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -8419025279212391560}
   - {fileID: 5058426525691437563}
   EditorEvents:
   - {fileID: 6502113618870764133}
@@ -401,7 +380,7 @@ MonoBehaviour:
   - {fileID: 5058426525691437563}
   StringsBanks:
   - {fileID: 7761757256830331647}
-  cacheTime: 638185692988609315
+  cacheTime: 638186591878195319
   cacheVersion: 131603
 --- !u!114 &97879886981975112
 MonoBehaviour:
@@ -650,7 +629,7 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638186138803742283
+  lastModified: 638186591878175257
   FileSizes:
   - Name: Desktop
     Value: 10329376
@@ -803,7 +782,7 @@ MonoBehaviour:
   Path: ../Fmod/LD53/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638185692988609315
+  lastModified: 638186591878195319
   FileSizes:
   - Name: Desktop
     Value: 1512
