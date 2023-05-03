@@ -64,7 +64,7 @@
 			<value>5</value>
 		</property>
 		<property name="voiceStealing">
-			<value>4</value>
+			<value>1</value>
 		</property>
 		<property name="maximumDistance">
 			<value>200</value>
