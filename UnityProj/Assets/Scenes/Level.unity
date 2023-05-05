@@ -6477,6 +6477,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   containerCanvas: {fileID: 0}
+  bgmRef:
+    Guid:
+      Data1: 2034993847
+      Data2: 1221222715
+      Data3: 1391719814
+      Data4: 1123798479
+    Path: event:/Music/Gameplay/BGM_layered
 --- !u!114 &1482413523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8227,6 +8234,20 @@ MonoBehaviour:
   layersToMouseOver:
     serializedVersion: 2
     m_Bits: 128
+  pickUpRef:
+    Guid:
+      Data1: 640510724
+      Data2: 1200516781
+      Data3: -329922147
+      Data4: -2131926872
+    Path: event:/Sfx/Gameplay/Pickup
+  dropRef:
+    Guid:
+      Data1: -816589611
+      Data2: 1226284833
+      Data3: -1170294393
+      Data4: -1302435829
+    Path: event:/Sfx/Gameplay/Drop
 --- !u!1 &1694426861
 GameObject:
   m_ObjectHideFlags: 0
@@ -10896,11 +10917,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2268592291930522116, guid: a9e77973058124b419c5fd769513d924,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6970648205308361045}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e77973058124b419c5fd769513d924, type: 3}
 --- !u!4 &251429101554651173
 Transform:
@@ -17009,6 +17026,13 @@ MonoBehaviour:
   cubeVert10: {fileID: 5498702746426387112}
   cubeVert11: {fileID: 6335397328241830489}
   cubeVert01: {fileID: 1182140276128542630}
+  propellerRef:
+    Guid:
+      Data1: -65968080
+      Data2: 1113983238
+      Data3: -1533369934
+      Data4: -103362561
+    Path: event:/Sfx/Gameplay/Propeller
 --- !u!23 &4227709592938437826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19557,12 +19581,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6056656097305971041 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2268592291930522116, guid: a9e77973058124b419c5fd769513d924,
-    type: 3}
-  m_PrefabInstance: {fileID: 247411743041877911}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6082620466196142837
 GameObject:
   m_ObjectHideFlags: 0
@@ -21071,37 +21089,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6970648205308361045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056656097305971041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1302703053
-      Data2: 1305205797
-      Data3: 1651426465
-      Data4: -1491646313
-    Path: event:/Sfx/Gameplay/Thud
-  Event: 
-  PlayEvent: 7
-  StopEvent: 8
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 200
 --- !u!1 &6972127844679531527
 GameObject:
   m_ObjectHideFlags: 0

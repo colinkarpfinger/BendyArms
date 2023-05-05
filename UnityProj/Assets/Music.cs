@@ -2,23 +2,26 @@ using System;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class Music : MonoBehaviour
 {
     public Canvas containerCanvas;
     private Text containerText;
-    private FMOD.Studio.EventInstance instance;
     private BeatSystem bS;
+
+    [SerializeField] EventReference bgmRef;
+    private FMOD.Studio.EventInstance bgmSound;
 
     void Start()
     {
         bS = GetComponent<BeatSystem>();
         //containerText = containerCanvas.GetComponent<Text>();
-        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Gameplay/BGM_layered");
-        instance.start();
-        bS.AssignBeatEvent(instance); 
+        bgmSound = FMODUnity.RuntimeManager.CreateInstance(bgmRef);
+        bgmSound.start();
+        bS.AssignBeatEvent(bgmSound);
         
-        instance.setParameterByName("Containers", 0);
+        bgmSound.setParameterByName("Containers", 0);
         TentacleController.containerCount = 0;
     }
 
@@ -26,8 +29,7 @@ public class Music : MonoBehaviour
     {
 
         if(BeatSystem.marker == "Switch") {
-            Debug.Log(TentacleController.containerCount);
-            instance.setParameterByName("Containers", TentacleController.containerCount);
+            bgmSound.setParameterByName("Containers", TentacleController.containerCount);
         }
         //Debug.Log(BeatSystem.beat);
         //Debug.Log(BeatSystem.marker);

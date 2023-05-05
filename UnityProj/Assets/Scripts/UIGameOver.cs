@@ -40,7 +40,7 @@ public class UIGameOver : MonoBehaviour
     
     private IEnumerator RestartLevel() {
         
-        FMOD.Studio.Bus masterBus = FMODUnity.RuntimeManager.GetBus("Bus:/");
+        FMOD.Studio.Bus masterBus = FMODUnity.RuntimeManager.GetBus("bus:/");
         masterBus.stopAllEvents(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         
         yield return new WaitForSecondsRealtime(2);

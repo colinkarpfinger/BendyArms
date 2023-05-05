@@ -5,6 +5,7 @@ using RootMotion.FinalIK;
 
 using UnityEngine;
 using UnityEngine.Serialization;
+using FMODUnity;
 
 public class TentacleController : MonoBehaviour
 {
@@ -48,8 +49,12 @@ public class TentacleController : MonoBehaviour
         Left
     }
 
-    [SerializeField] public FMOD.Studio.EventInstance pickUpSound;
-    [SerializeField] public FMOD.Studio.EventInstance dropSound;
+
+    [SerializeField] EventReference pickUpRef;
+    private FMOD.Studio.EventInstance pickUpSound;
+
+    [SerializeField] EventReference dropRef;
+    private FMOD.Studio.EventInstance dropSound;
 
     public static int containerCount = 0;
 
@@ -93,7 +98,7 @@ public class TentacleController : MonoBehaviour
             {
                 targetObject = hit.rigidbody;
                 SetState(TentacleState.MovingToTarget);
-                pickUpSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Pickup");
+                pickUpSound = FMODUnity.RuntimeManager.CreateInstance(pickUpRef);
                 containerCount += 1;
                 // Colin I'm taking the jump to behavior
                 if (currentSide == TentacleSide.Left)
@@ -198,7 +203,7 @@ public class TentacleController : MonoBehaviour
         }
         else if (state == TentacleState.HoldingObject)
         {
-            dropSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Drop");
+            dropSound = FMODUnity.RuntimeManager.CreateInstance(dropRef);
             if (currentSide == TentacleSide.Left)
             {
                 Debug.Log("Setting left");

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 namespace BendyArms
 {
@@ -23,7 +24,8 @@ namespace BendyArms
         [SerializeField] private Transform cubeVert11;
         [SerializeField] private Transform cubeVert01;
 
-        [SerializeField] private FMOD.Studio.EventInstance propellerSound; 
+        [SerializeField] EventReference propellerRef;
+        private FMOD.Studio.EventInstance propellerSound;
         
         private Transform motor;
         //private Transform[] buoyancyVerts;
@@ -32,7 +34,7 @@ namespace BendyArms
         {
             //rigidbody.useGravity = false;
             //buoyancyVerts = new Transform[]{cubeVert00, cubeVert01, cubeVert11, cubeVert10};
-            propellerSound = FMODUnity.RuntimeManager.CreateInstance("event:/Sfx/Gameplay/Propeller");
+            propellerSound = FMODUnity.RuntimeManager.CreateInstance(propellerRef);
             motor = transform.Find("Motor");
         }
 
